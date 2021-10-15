@@ -13,8 +13,16 @@
     <string name="teknologi">Teknologi</string>
     <string name="godt_og_blandet_1">Godt og blandet 1</string>
     <string name="godt_og_blandet_2">Godt og blandet 2</string>
-    <string name="velg_vanskelighetsgrad">Velg vanskelighetsgrad</string>
     <string name="lett">Lett</string>
     <string name="middels">Middels</string>
     <string name="vanskelig">Vanskelig</string>
+    <string name="kategori">Kategori</string>
+    <string name="lag_ditt_sp_rsm_l">Lag ditt spørsmål</string>
+    <string name="send_inn_sp_rsm_l">Send inn spørsmål</string>
+    <string name="skriv_ditt_sp_rsm_l">Skriv ditt spørsmål...</string>
+    <string name="velg_kategorien">Velg kategorien</string>
+    <string name="blandet2">Godt og Blandet 2</string>
+    <string name="blandet1">Godt og Blandet 1</string>
+    <string name="filmogtv">Film og TV</string>
+    <string name="Velg_Vanskelighetsgrad">Velg Vanskelighetsgrad</string>
 </resources>

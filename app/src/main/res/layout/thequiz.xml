@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/cardview_dark_background"
+    tools:context="thequiz">
+
+    <TextView
+        android:id="@+id/sporsmalsrunde"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Antall spørsmål"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        android:textColor="@color/white"></TextView>
+
+    <TextView
+        android:id="@+id/sporsmalet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sporsmalsrunde"
+        android:layout_marginTop="30dp"
+        android:text="Spørsmål"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textColor="@color/white"></TextView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sporsmalet"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/valg1Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/purple_200"
+            android:padding="4dp"
+            android:text="Svar 1"
+            android:textAllCaps="false"></Button>
+
+        <Button
+            android:id="@+id/valg2Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/purple_200"
+            android:padding="4dp"
+            android:text="Svar 2"
+            android:textAllCaps="false"></Button>
+
+        <Button
+            android:id="@+id/valg3Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/purple_200"
+            android:padding="10dp"
+            android:text="Svar 3"
+            android:textAllCaps="false"></Button>
+
+        <Button
+            android:id="@+id/valg4Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/purple_200"
+            android:padding="4dp"
+            android:text="Svar 4"
+            android:textAllCaps="false"></Button>
+
+    </LinearLayout>
+
+</RelativeLayout>

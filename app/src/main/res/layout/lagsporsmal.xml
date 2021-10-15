@@ -1,6 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background">
+
+    <TextView
+        android:id="@+id/egetView"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="@string/lag_ditt_sp_rsm_l"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <EditText
+        android:id="@+id/skrivSporsmalText"
+        android:layout_width="225dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:labelFor="@id/skrivSporsmalText"
+        android:text="@string/skriv_ditt_sp_rsm_l"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="225dp"
+        android:layout_height="236dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="@string/kategori"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textColor="@color/white"
+            android:text="@string/velg_kategorien"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white">
+
+            <RadioButton
+                android:id="@+id/geoButton"
+                android:layout_width="120dp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:text="@string/geografi" />
+
+            <RadioButton
+                android:id="@+id/sportButton"
+                android:layout_width="105dp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+
+                android:text="@string/sport" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="225dp"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/vitenskapButton"
+                android:layout_width="120dp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:text="@string/vitenskap" />
+
+            <RadioButton
+                android:id="@+id/filmogtvButton"
+                android:layout_width="0dp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/filmogtv" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:textColor="@color/white"
+            tools:layout_editor_absoluteX="97dp"
+            tools:layout_editor_absoluteY="120dp">
+
+            <RadioButton
+                android:id="@+id/teknologiButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:text="@string/teknologi" />
+
+            <RadioButton
+                android:id="@+id/historieButton"
+                android:layout_width="105dp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:text="@string/historie" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/blandetButton1"
+                android:layout_width="120dp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:text="@string/blandet1" />
+
+            <RadioButton
+                android:id="@+id/blandetButton2"
+                android:layout_width="107dp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:text="@string/blandet2" />
+
+        </LinearLayout>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="219dp"
+        android:layout_height="56dp"
+        android:text="@string/send_inn_sp_rsm_l"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

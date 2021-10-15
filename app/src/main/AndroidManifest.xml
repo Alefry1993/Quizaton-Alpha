@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizatonAlpha">
+        <activity android:name=".thequiz" android:exported="true"></activity>
+        <activity android:name=".popupActivity" android:exported="true"></activity>
+        <activity android:name=".scoreboardActivity" android:exported="true"></activity>
+        <activity android:name=".lagActivity" android:exported="true"></activity>
         <activity android:name=".kategoriActivity" android:exported="true"></activity>
         <activity android:name=".sporsmalActivity" android:exported="true"></activity>
         <activity android:name=".gradActivity" android:exported="true"></activity>
