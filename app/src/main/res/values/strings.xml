@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Quizaton-Alpha</string>
+    <string name="start_quiz">Start Quiz</string>
+    <string name="lag_egne_sp_rsm_l">Lag egne spørsmål</string>
+    <string name="scoreboard">Scoreboard</string>
+    <string name="quizaton">Quizaton</string>
+    <string name="historie">Historie</string>
+    <string name="geografi">Geografi</string>
+    <string name="sport">Sport</string>
+    <string name="vitenskap">Vitenskap</string>
+    <string name="velg_kategori">Velg Kategori</string>
+    <string name="film_og_tv">Film og tv</string>
+    <string name="teknologi">Teknologi</string>
+    <string name="godt_og_blandet_1">Godt og blandet 1</string>
+    <string name="godt_og_blandet_2">Godt og blandet 2</string>
+</resources>
