@@ -13,4 +13,8 @@
     <string name="teknologi">Teknologi</string>
     <string name="godt_og_blandet_1">Godt og blandet 1</string>
     <string name="godt_og_blandet_2">Godt og blandet 2</string>
+    <string name="velg_vanskelighetsgrad">Velg vanskelighetsgrad</string>
+    <string name="lett">Lett</string>
+    <string name="middels">Middels</string>
+    <string name="vanskelig">Vanskelig</string>
 </resources>
