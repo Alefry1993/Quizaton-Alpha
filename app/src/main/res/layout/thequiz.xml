@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/cardview_dark_background"
-    tools:context="thequiz">
+    tools:context=".Activities.thequiz">
 
     <TextView
         android:id="@+id/sporsmalsrunde"

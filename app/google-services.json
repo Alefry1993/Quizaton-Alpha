@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "715362600942",
+    "project_id": "quizaton-8c937",
+    "storage_bucket": "quizaton-8c937.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715362600942:android:bab9cbb79c49f9640d70ff",
+        "android_client_info": {
+          "package_name": "com.example.quizaton_alpha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "715362600942-1er0e9fl4u9adqiq0ji89v0463pg85p1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUIOivzm4iz72-3qoPmnIdQkY5XZ8tuGg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "715362600942-1er0e9fl4u9adqiq0ji89v0463pg85p1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
