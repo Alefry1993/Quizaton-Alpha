@@ -1,4 +1,9 @@
 package com.example.quizaton_alpha.Authentication;
 
-public class registrereActivity {
+import android.content.Intent;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class registrereActivity extends AppCompatActivity {
+    Intent recievedIntent = getIntent();
 }

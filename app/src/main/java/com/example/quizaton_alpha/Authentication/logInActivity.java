@@ -1,6 +1,8 @@
 package com.example.quizaton_alpha.Authentication;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -30,6 +32,14 @@ public class logInActivity extends AppCompatActivity {
         signIn = (Button) findViewById(R.id.signIn);
         glemtPass = (TextView) findViewById(R.id.glemtPass);
         registrer = (TextView) findViewById(R.id.register);
+
+        registrer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regIntent = new Intent(getApplicationContext(),registrereActivity.class);
+                startActivity(regIntent);
+            }
+        });
 
     }
 }
