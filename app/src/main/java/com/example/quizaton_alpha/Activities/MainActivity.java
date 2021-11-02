@@ -12,7 +12,6 @@ import com.example.quizaton_alpha.R;
 
 public class MainActivity extends AppCompatActivity {
     public static final String KEY_NAME = "name";
-    private TextView introView;
     private Button startButton;
     private Button egneButton;
     private Button scoreboardButton;
@@ -23,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.frontpage);
 
-
-        introView = (TextView) findViewById(R.id.introTittel);
         startButton = (Button) findViewById(R.id.startButton);
         egneButton = (Button) findViewById(R.id.egneButton);
         scoreboardButton = (Button) findViewById(R.id.scoreboardButton);
