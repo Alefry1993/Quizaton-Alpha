@@ -38,4 +38,6 @@
     <string name="passord">Passord</string>
     <string name="email">Email</string>
     <string name="logo">logo</string>
+    <string name="sp_rsm_l_larget">Spørsmål Larget</string>
+    <string name="tilbake_til_hovedmenyen">Tilbake til hovedmenyen</string>
 </resources>

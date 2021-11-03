@@ -24,34 +24,22 @@
         <entry key="..\:/Users/ale-f/OneDrive/Desktop/AndroidStudioProjects/app/src/main/res/layout/registrer.xml" value="0.19739583333333333" />
         <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22135416666666666" />
-<<<<<<< Updated upstream
-        <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/layout/login.xml" value="0.2859375" />
-        <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/layout/registrer.xml" value="0.19375" />
-=======
         <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/layout/antallsporsmal.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/layout/fragment_home.xml" value="0.16983695652173914" />
         <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/layout/frontpage.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/layout/kategori.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/layout/lagringpopup.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/layout/lagringpopup.xml" value="0.5" />
         <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/layout/lagsporsmal.xml" value="0.16983695652173914" />
         <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/layout/login.xml" value="0.5" />
         <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/layout/registrer.xml" value="0.25" />
         <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/layout/scoreboard.xml" value="0.16983695652173914" />
         <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/layout/thequiz.xml" value="0.16983695652173914" />
         <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/layout/vanskelighetsgrad.xml" value="0.16983695652173914" />
->>>>>>> Stashed changes
         <entry key="..\:/Users/ale-f/OneDrive/Desktop/Quizaton/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22135416666666666" />
-        <entry key="..\:/Users/lukso/Downloads/Quizaton-Alpha/app/src/main/res/layout/antallsporsmal.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/lukso/Downloads/Quizaton-Alpha/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/lukso/Downloads/Quizaton-Alpha/app/src/main/res/layout/frontpage.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/lukso/Downloads/Quizaton-Alpha/app/src/main/res/layout/kategori.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/lukso/Downloads/Quizaton-Alpha/app/src/main/res/layout/lagringpopup.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/lukso/Downloads/Quizaton-Alpha/app/src/main/res/layout/lagsporsmal.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/lukso/Downloads/Quizaton-Alpha/app/src/main/res/layout/login.xml" value="0.14628623188405798" />
         <entry key="..\:/Users/lukso/Downloads/Quizaton-Alpha/app/src/main/res/layout/registrer.xml" value="0.264" />
-        <entry key="..\:/Users/lukso/Downloads/Quizaton-Alpha/app/src/main/res/layout/scoreboard.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/lukso/Downloads/Quizaton-Alpha/app/src/main/res/layout/thequiz.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/lukso/Downloads/Quizaton-Alpha/app/src/main/res/layout/vanskelighetsgrad.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
