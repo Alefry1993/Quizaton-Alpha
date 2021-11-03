@@ -2,6 +2,7 @@ package com.example.quizaton_alpha.Authentication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,7 +56,28 @@ public class registrereActivity extends AppCompatActivity implements View.OnClic
         String password = regPass.getText().toString().trim();
 
         if (name.isEmpty()){
-            regName.setError("");
+            regName.setError("Påkrevd: Skriv inn navn");
+            regName.requestFocus();
+            return;
+        }
+
+        if (email.isEmpty()){
+            regEmail.setError("Email er påkrevd");
+            regEmail.requestFocus();
+            return;
+        }
+
+        if (password.isEmpty()){
+            regPass.setError("Passord er påkrevd");
+            regPass.requestFocus();
+            return;
+        }
+
+        if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            regEmail.setError("Vennligst skriv en gyldig Email adresse");
+            regEmail.requestFocus();
+            return;
+
         }
 
 
