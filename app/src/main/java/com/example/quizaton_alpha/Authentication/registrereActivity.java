@@ -2,6 +2,7 @@ package com.example.quizaton_alpha.Authentication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -13,10 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.quizaton_alpha.R;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class registrereActivity extends AppCompatActivity {
+public class registrereActivity extends AppCompatActivity implements View.OnClickListener {
     Intent recievedIntent = getIntent();
     private FirebaseAuth mAuth;
-    private ImageView logo;
+    private ImageView regLogo;
     private EditText regName, regPass, regEmail;
     private Button regButton;
     private ProgressBar regProg;
@@ -28,9 +29,36 @@ public class registrereActivity extends AppCompatActivity {
         setContentView(R.layout.registrer);
         mAuth = FirebaseAuth.getInstance();
 
-        logo = (ImageView) findViewById(R.id.logo);
-        regEmail = (EditText) findViewById(R.id.email);
-        regEmail = (EditText) findViewById(R.id.email);
-        regEmail = (EditText) findViewById(R.id.email);
+        regLogo = (ImageView) findViewById(R.id.regLogo);
+        regName = (EditText) findViewById(R.id.regName);
+        regPass = (EditText) findViewById(R.id.regPass);
+        regEmail = (EditText) findViewById(R.id.regEmail);
+        regButton = (Button) findViewById(R.id.regButton);
+        regProg = (ProgressBar) findViewById(R.id.regProg);
+
+        regButton.setOnClickListener(this);
+
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.regButton:
+                registrerBruker();
+        }
+    }
+
+    private void registrerBruker(){
+        String name = regName.getText().toString().trim();
+        String email = regEmail.getText().toString().trim();
+        String password = regPass.getText().toString().trim();
+
+        if (name.isEmpty()){
+            regName.setError("");
+        }
+
+
+
     }
 }
