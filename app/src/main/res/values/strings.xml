@@ -40,4 +40,5 @@
     <string name="logg_inn">Logg Inn</string>
     <string name="todo">TODO</string>
     <string name="glemt_passord">Glemt Passord</string>
+    <string name="registrer_deg">Registrer deg</string>
 </resources>
