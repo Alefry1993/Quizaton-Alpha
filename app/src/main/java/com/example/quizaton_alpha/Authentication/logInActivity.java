@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.quizaton_alpha.Activities.MainActivity;
 import com.example.quizaton_alpha.R;
 
 public class logInActivity extends AppCompatActivity {
@@ -38,6 +39,14 @@ public class logInActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent regIntent = new Intent(getApplicationContext(),registrereActivity.class);
                 startActivity(regIntent);
+            }
+        });
+
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent signIntent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(signIntent);
             }
         });
 

@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent recievedIntent = getIntent();
         setContentView(R.layout.frontpage);
 
         startButton = (Button) findViewById(R.id.startButton);

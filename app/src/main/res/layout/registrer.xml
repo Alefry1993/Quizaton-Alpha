@@ -8,7 +8,7 @@
     >
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/regLogo"
         android:layout_width="400dp"
         android:layout_height="260dp"
         android:contentDescription="@string/logo"
