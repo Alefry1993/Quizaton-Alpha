@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quizaton_alpha.R;
@@ -17,12 +18,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+
 public class sporsmalActivity extends AppCompatActivity {
 
     private TextView antallView;
     private Button fiveButton;
     private Button tenButton;
     private Button twentyButton;
+    private ArrayList sporsmalList;
 
     private FirebaseFirestore firestoreDb;
     private CollectionReference spørsmålCollectionReference;
@@ -38,6 +42,7 @@ public class sporsmalActivity extends AppCompatActivity {
         twentyButton = findViewById(R.id.twentyButton);
 
         firestoreDb = FirebaseFirestore.getInstance();
+        sporsmalList = new ArrayList<>();
 
         spørsmålCollectionReference = firestoreDb.collection("spørsmål");
 
@@ -71,19 +76,22 @@ public class sporsmalActivity extends AppCompatActivity {
     });
 }
 
-    private void createFireStoreReadListener() {
-        spørsmålCollectionReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>(){
-            @Override
-            public void onComplete(@Notnull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    for (QueryDocumentSnapshot documentSnapshot : task.getResult()){
-                        Spørsmål spørsmål = dokumentSnapshot.toObject(Spørsmål.class);
-                    }
 
+private void createFireStoreReadListener(){
+        spørsmålCollectionReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    for (QueryDocumentSnapshot documentSnapshot : task.getResult()){
+                        Spørsmål spørsmål = documentSnapshot.toObject(Spørsmål.class);
+                        spørsmål.setSpørsmålet(documentSnapshot.getId());
+                        sporsmalList.add(Spørsmål);
+
+                    }
                 }
             }
-        });
-    }
+        })
+}
 
     @Override
     protected void onResume() {
