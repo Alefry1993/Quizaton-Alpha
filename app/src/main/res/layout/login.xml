@@ -8,42 +8,43 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="414dp"
+        android:layout_width="400dp"
         android:layout_height="260dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2"
-        app:srcCompat="@drawable/logo2"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/logo2" />
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:ems="10"
         android:hint="@string/prompt_email"
-        android:textColorHint="@color/black"
+        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        android:importantForAutofill="no" />
+        app:layout_constraintVertical_bias="0.5" />
 
     <EditText
         android:id="@+id/pass"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:ems="10"
         android:hint="@string/prompt_password"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textColorHint="@color/black"
@@ -52,11 +53,11 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6"
-        android:importantForAutofill="no" />
+        app:layout_constraintVertical_bias="0.6" />
+
     <Button
         android:id="@+id/signIn"
-        android:layout_width="216dp"
+        android:layout_width="250dp"
         android:layout_height="58dp"
         android:text="@string/logg_inn"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,7 +78,7 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintHorizontal_bias="0.261"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8" />
@@ -89,11 +90,11 @@
         android:background="@color/cardview_dark_background"
         android:clickable="true"
         android:minHeight="48dp"
-        android:text="@string/registrer_bruker"
+        android:text="@string/registrer_deg"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintHorizontal_bias="0.755"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8" />
