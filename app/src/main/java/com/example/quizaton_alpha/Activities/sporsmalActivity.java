@@ -17,6 +17,8 @@ public class sporsmalActivity extends AppCompatActivity {
     private Button tenButton;
     private Button twentyButton;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
