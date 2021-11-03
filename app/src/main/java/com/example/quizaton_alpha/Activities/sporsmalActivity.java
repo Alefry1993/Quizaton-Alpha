@@ -79,6 +79,7 @@ public class sporsmalActivity extends AppCompatActivity {
                     for (QueryDocumentSnapshot documentSnapshot : task.getResult()){
                         Spørsmål spørsmål = dokumentSnapshot.toObject(Spørsmål.class);
                     }
+
                 }
             }
         });
