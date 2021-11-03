@@ -85,12 +85,12 @@ private void createFireStoreReadListener(){
                     for (QueryDocumentSnapshot documentSnapshot : task.getResult()){
                         Spørsmål spørsmål = documentSnapshot.toObject(Spørsmål.class);
                         spørsmål.setSpørsmålet(documentSnapshot.getId());
-                        sporsmalList.add(Spørsmål);
+                        sporsmalList.add(spørsmål);
 
                     }
                 }
             }
-        })
+        });
 }
 
     @Override
