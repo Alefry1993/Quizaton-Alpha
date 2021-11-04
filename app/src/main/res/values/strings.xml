@@ -32,7 +32,6 @@
     <string name="prompt_password">Password</string>
     <string name="logg_inn">Logg Inn</string>
     <string name="todo">TODO</string>
-    <string name="glemt_passord">Glemt_passord?</string>
     <string name="registrer_deg">Registrer deg</string>
     <string name="navn">Navn</string>
     <string name="passord">Passord</string>
@@ -41,4 +40,6 @@
     <string name="sp_rsm_l_larget">Spørsmål Larget</string>
     <string name="tilbake_til_hovedmenyen">Tilbake til hovedmenyen</string>
     <string name="registrer_ny_bruker">Registrer Ny Bruker</string>
+    <string name="glemtPassord">Glemt Passord?</string>
+    <string name="allerede_registrert_logg_inn_her">Allerede registrert? Logg Inn her</string>
 </resources>

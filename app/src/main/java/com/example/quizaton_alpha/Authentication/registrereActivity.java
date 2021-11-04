@@ -2,12 +2,14 @@ package com.example.quizaton_alpha.Authentication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,6 +31,7 @@ public class registrereActivity extends AppCompatActivity implements View.OnClic
     private EditText regName, regPass, regEmail;
     private Button regButton;
     private ProgressBar regProg;
+    private TextView regLoggInn;
 
 
     @Override
@@ -43,8 +46,15 @@ public class registrereActivity extends AppCompatActivity implements View.OnClic
         regEmail = (EditText) findViewById(R.id.regEmail);
         regButton = (Button) findViewById(R.id.regButton);
         regProg = (ProgressBar) findViewById(R.id.regProg);
+        regLoggInn = (TextView) findViewById(R.id.regLoggInn);
 
-        regButton.setOnClickListener(this);
+        regLoggInn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regLoggInnIntent = new Intent(getApplicationContext(),logInActivity.class);
+                startActivity(regLoggInnIntent);
+            }
+        });
 
         regLogo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,89 +64,18 @@ public class registrereActivity extends AppCompatActivity implements View.OnClic
             }
         });
 
+        regButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String navn = regName.getText().toString().trim();
+                String email = regEmail.getText().toString().trim();
+                String passord = regPass.getText().toString().trim();
 
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.regButton:
-                registrerBruker();
-        }
-    }
-
-    private void registrerBruker(){
-        String navn = regName.getText().toString().trim();
-        String email = regEmail.getText().toString().trim();
-        String passord = regPass.getText().toString().trim();
-
-        if (navn.isEmpty()){
-            regName.setError("Navn er påkrevd");
-            regName.requestFocus();
-            return;
-        }
-
-        if (email.isEmpty()){
-            regEmail.setError("Email er påkrevd");
-            regEmail.requestFocus();
-            return;
-        }
-
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            regEmail.setError("Vennligst skriv en gyldig Email adresse");
-            regEmail.requestFocus();
-            return;
-
-        }
-
-        if (passord.isEmpty()){
-            regPass.setError("Passord er påkrevd");
-            regPass.requestFocus();
-            return;
-        }
-
-        if(passord.length() < 6){
-            regPass.setError("Passord må være lengre enn 6 karakterer");
-            regPass.requestFocus();
-            return;
-        }
-
-        regProg.setVisibility(View.VISIBLE);
-        mAuth.createUserWithEmailAndPassword(email, passord)
-                .addOnCompleteListener(this,new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-
-                        if (task.isSuccessful()) {
-                            brukerActivity bruker = new brukerActivity(navn,email);
-                           // Push this
-
-                            FirebaseDatabase.getInstance().getReference("Brukere")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(bruker).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(registrereActivity.this, "Ny Bruker har blitt registrert!", Toast.LENGTH_LONG).show();
-                                        regProg.setVisibility(View.VISIBLE);
-                                    }else{
-                                        Toast.makeText(registrereActivity.this, "Ny Bruker ble ikke registrert. Prøv på nytt!", Toast.LENGTH_LONG).show();
-                                        regProg.setVisibility(View.GONE);
-                                    }
-                                }
-                            });
-
-                        }else {
-                            Toast.makeText(registrereActivity.this, "Ny Bruker ble ikke registrert!", Toast.LENGTH_LONG).show();
-                            regProg.setVisibility(View.GONE);
-
-
-
-
-                        }
-                    }
-                });
-
+                if (TextUtils.isEmpty(navn)){
+                    regName.setError("");
+                }
+            }
+        });
     }
 }
+
