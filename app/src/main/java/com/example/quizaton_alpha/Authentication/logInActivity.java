@@ -34,6 +34,14 @@ public class logInActivity extends AppCompatActivity {
         glemtPass = (TextView) findViewById(R.id.glemtPass);
         registrer = (TextView) findViewById(R.id.register);
 
+        logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent logoIntent = new Intent(getApplicationContext(),velkommenActivity.class);
+                startActivity(logoIntent);
+            }
+        });
+
         registrer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

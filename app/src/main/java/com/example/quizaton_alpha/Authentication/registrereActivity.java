@@ -46,6 +46,14 @@ public class registrereActivity extends AppCompatActivity implements View.OnClic
 
         regButton.setOnClickListener(this);
 
+        regLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regLogoIntent = new Intent(getApplicationContext(),velkommenActivity.class);
+                startActivity(regLogoIntent);
+            }
+        });
+
 
     }
 
