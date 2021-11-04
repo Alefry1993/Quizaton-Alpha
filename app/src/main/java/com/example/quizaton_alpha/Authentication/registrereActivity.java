@@ -8,12 +8,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quizaton_alpha.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class registrereActivity extends AppCompatActivity implements View.OnClickListener {
     Intent recievedIntent = getIntent();
@@ -51,12 +58,12 @@ public class registrereActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void registrerBruker(){
-        String name = regName.getText().toString().trim();
+        String navn = regName.getText().toString().trim();
         String email = regEmail.getText().toString().trim();
-        String password = regPass.getText().toString().trim();
+        String passord = regPass.getText().toString().trim();
 
-        if (name.isEmpty()){
-            regName.setError("Påkrevd: Skriv inn navn");
+        if (navn.isEmpty()){
+            regName.setError("Navn er påkrevd");
             regName.requestFocus();
             return;
         }
@@ -67,20 +74,61 @@ public class registrereActivity extends AppCompatActivity implements View.OnClic
             return;
         }
 
-        if (password.isEmpty()){
-            regPass.setError("Passord er påkrevd");
-            regPass.requestFocus();
-            return;
-        }
-
-        if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             regEmail.setError("Vennligst skriv en gyldig Email adresse");
             regEmail.requestFocus();
             return;
 
         }
 
+        if (passord.isEmpty()){
+            regPass.setError("Passord er påkrevd");
+            regPass.requestFocus();
+            return;
+        }
 
+        if(passord.length() < 6){
+            regPass.setError("Passord må være lengre enn 6 karakterer");
+            regPass.requestFocus();
+            return;
+        }
+
+        regProg.setVisibility(View.VISIBLE);
+        mAuth.createUserWithEmailAndPassword(email, passord)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        if (task.isSuccessful()) {
+                            brukerActivity bruker = new brukerActivity(navn,email);
+                           // Push this
+
+                            FirebaseDatabase.getInstance().getReference("Brukere")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(bruker).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(registrereActivity.this, "Ny Bruker har blitt registrert!", Toast.LENGTH_LONG).show();
+                                        regProg.setVisibility(View.VISIBLE);
+                                    }else{
+                                        Toast.makeText(registrereActivity.this, "Ny Bruker ble ikke registrert. Prøv på nytt!", Toast.LENGTH_LONG).show();
+                                        regProg.setVisibility(View.GONE);
+                                    }
+                                }
+                            });
+
+                        }else {
+                            Toast.makeText(registrereActivity.this, "Ny Bruker ble ikke registrert!", Toast.LENGTH_LONG).show();
+                            regProg.setVisibility(View.GONE);
+
+
+
+
+                        }
+                    }
+                });
 
     }
 }
