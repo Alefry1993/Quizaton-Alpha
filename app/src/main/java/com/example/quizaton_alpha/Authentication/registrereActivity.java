@@ -95,7 +95,7 @@ public class registrereActivity extends AppCompatActivity implements View.OnClic
 
         regProg.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email, passord)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(this,new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
