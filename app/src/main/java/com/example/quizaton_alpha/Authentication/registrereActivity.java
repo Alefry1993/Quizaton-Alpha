@@ -24,7 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class registrereActivity extends AppCompatActivity implements View.OnClickListener {
+public class registrereActivity extends AppCompatActivity {
     Intent recievedIntent = getIntent();
     private FirebaseAuth mAuth;
     private ImageView regLogo;
@@ -48,6 +48,11 @@ public class registrereActivity extends AppCompatActivity implements View.OnClic
         regProg = (ProgressBar) findViewById(R.id.regProg);
         regLoggInn = (TextView) findViewById(R.id.regLoggInn);
 
+        if (mAuth.getCurrentUser() != null){
+            Intent userIntent = new Intent(getApplicationContext(),velkommenActivity.class);
+            startActivity(userIntent);
+        }
+
         regLoggInn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,12 +73,49 @@ public class registrereActivity extends AppCompatActivity implements View.OnClic
             @Override
             public void onClick(View view) {
                 String navn = regName.getText().toString().trim();
-                String email = regEmail.getText().toString().trim();
                 String passord = regPass.getText().toString().trim();
+                String email = regEmail.getText().toString().trim();
+
 
                 if (TextUtils.isEmpty(navn)){
-                    regName.setError("");
+                    regName.setError("Navn er påkrevd");
                 }
+
+
+                if (TextUtils.isEmpty(passord)){
+                    regPass.setError("Passord er påkrevd");
+                }
+
+                if(passord.length() < 6){
+                    regPass.setError("Passord må være lengre enn 6 karakterer");
+                }
+
+                if (TextUtils.isEmpty(email)){
+                    regEmail.setError("Email er påkrevd");
+                }
+
+                if (Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                    regEmail.setError("Skriv en gyldig Email adresse");
+                }
+
+                regProg.setVisibility(View.VISIBLE);
+
+                //Registrerer brukeren i Firebase:
+
+                mAuth.createUserWithEmailAndPassword(email,passord).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(registrereActivity.this,"Bruker Opprettet",Toast.LENGTH_SHORT).show();
+                            Intent regUserIntent = new Intent(getApplicationContext(),velkommenActivity.class);
+                            startActivity(regUserIntent);
+
+                        }else {
+                            Toast.makeText(registrereActivity.this,"ERROR! Bruker ble ikke opprettet." + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
             }
         });
     }
