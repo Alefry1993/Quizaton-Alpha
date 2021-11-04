@@ -51,6 +51,7 @@ public class registrereActivity extends AppCompatActivity {
         if (mAuth.getCurrentUser() != null){
             Intent userIntent = new Intent(getApplicationContext(),velkommenActivity.class);
             startActivity(userIntent);
+            finish();
         }
 
         regLoggInn.setOnClickListener(new View.OnClickListener() {
@@ -79,23 +80,32 @@ public class registrereActivity extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(navn)){
                     regName.setError("Navn er påkrevd");
+                    regN.requestFocus();
+                    return;
                 }
-
 
                 if (TextUtils.isEmpty(passord)){
                     regPass.setError("Passord er påkrevd");
+                    regPass.requestFocus();
+                    return;
                 }
 
                 if(passord.length() < 6){
                     regPass.setError("Passord må være lengre enn 6 karakterer");
+                    regPass.requestFocus();
+                    return;
                 }
 
                 if (TextUtils.isEmpty(email)){
                     regEmail.setError("Email er påkrevd");
+                    regEmail.requestFocus();
+                    return;
                 }
 
                 if (Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                     regEmail.setError("Skriv en gyldig Email adresse");
+                    regEmail.requestFocus();
+                    return;
                 }
 
                 regProg.setVisibility(View.VISIBLE);
@@ -111,7 +121,7 @@ public class registrereActivity extends AppCompatActivity {
                             startActivity(regUserIntent);
 
                         }else {
-                            Toast.makeText(registrereActivity.this,"ERROR! Bruker ble ikke opprettet." + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(registrereActivity.this,"ERROR! Bruker ble ikke opprettet." ,Toast.LENGTH_SHORT).show();
                         }
 
                     }
