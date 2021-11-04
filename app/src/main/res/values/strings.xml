@@ -42,4 +42,5 @@
     <string name="registrer_ny_bruker">Registrer Ny Bruker</string>
     <string name="glemtPassord">Glemt Passord?</string>
     <string name="allerede_registrert_logg_inn_her">Allerede registrert? Logg Inn her</string>
+    <string name="tlf">Tlf</string>
 </resources>

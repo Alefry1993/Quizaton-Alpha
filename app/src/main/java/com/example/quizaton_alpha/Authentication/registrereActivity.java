@@ -21,17 +21,22 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class registrereActivity extends AppCompatActivity {
     Intent recievedIntent = getIntent();
+
+    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User"); //https://quizaton-8c937-default-rtdb.europe-west1.firebasedatabase.app/
+
     private FirebaseAuth mAuth;
     private ImageView regLogo;
-    private EditText regName, regPass, regEmail;
+    private EditText regName, regPass, regEmail, regTlf;
     private Button regButton;
     private ProgressBar regProg;
     private TextView regLoggInn;
+    private DatabaseReference databaseReference;
 
 
     @Override
@@ -44,6 +49,7 @@ public class registrereActivity extends AppCompatActivity {
         regName = (EditText) findViewById(R.id.regName);
         regPass = (EditText) findViewById(R.id.regPass);
         regEmail = (EditText) findViewById(R.id.regEmail);
+        regTlf = (EditText) findViewById(R.id.regTlf);
         regButton = (Button) findViewById(R.id.regButton);
         regProg = (ProgressBar) findViewById(R.id.regProg);
         regLoggInn = (TextView) findViewById(R.id.regLoggInn);
@@ -76,56 +82,51 @@ public class registrereActivity extends AppCompatActivity {
                 String navn = regName.getText().toString().trim();
                 String passord = regPass.getText().toString().trim();
                 String email = regEmail.getText().toString().trim();
+                String telefon = regTlf.getText().toString().trim();
 
+                if(navn.isEmpty()||passord.isEmpty()||email.isEmpty()){
+                    Toast.makeText(registrereActivity.this,"Fyll ut alle feltene!",Toast.LENGTH_SHORT).show();
+                }
 
-                if (TextUtils.isEmpty(navn)){
+                else if (TextUtils.isEmpty(navn)){
                     regName.setError("Navn er påkrevd");
-                    regN.requestFocus();
+                    regName.requestFocus();
                     return;
                 }
 
-                if (TextUtils.isEmpty(passord)){
-                    regPass.setError("Passord er påkrevd");
-                    regPass.requestFocus();
-                    return;
-                }
-
-                if(passord.length() < 6){
-                    regPass.setError("Passord må være lengre enn 6 karakterer");
-                    regPass.requestFocus();
-                    return;
-                }
-
-                if (TextUtils.isEmpty(email)){
+                else if (TextUtils.isEmpty(email)){
                     regEmail.setError("Email er påkrevd");
                     regEmail.requestFocus();
                     return;
                 }
 
-                if (Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                else if (Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                     regEmail.setError("Skriv en gyldig Email adresse");
                     regEmail.requestFocus();
                     return;
                 }
 
-                regProg.setVisibility(View.VISIBLE);
+                else if (TextUtils.isEmpty(passord)){
+                    regPass.setError("Passord er påkrevd");
+                    regPass.requestFocus();
+                    return;
+                }
 
-                //Registrerer brukeren i Firebase:
+                else if(passord.length() < 6){
+                    regPass.setError("Passord må være lengre enn 6 karakterer");
+                    regPass.requestFocus();
+                    return;
+                }
 
-                mAuth.createUserWithEmailAndPassword(email,passord).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            Toast.makeText(registrereActivity.this,"Bruker Opprettet",Toast.LENGTH_SHORT).show();
-                            Intent regUserIntent = new Intent(getApplicationContext(),velkommenActivity.class);
-                            startActivity(regUserIntent);
+                else{
+                    databaseReference.child("users").child(telefon).child("Navn:").child(navn);
+                    databaseReference.child("users").child(telefon).child("Email:").child(email);
+                    databaseReference.child("users").child(telefon).child("Passord:").child(passord);
 
-                        }else {
-                            Toast.makeText(registrereActivity.this,"ERROR! Bruker ble ikke opprettet." ,Toast.LENGTH_SHORT).show();
-                        }
+                    Toast.makeText(registrereActivity.this,"")
+                }
 
-                    }
-                });
+
             }
         });
     }
