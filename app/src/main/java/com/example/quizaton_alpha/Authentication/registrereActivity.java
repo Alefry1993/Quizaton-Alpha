@@ -85,56 +85,34 @@ public class registrereActivity extends AppCompatActivity {
                 String email = regEmail.getText().toString().trim();
                 String telefon = regTlf.getText().toString().trim();
 
-               if (TextUtils.isEmpty(navn)) {
-                    Toast.makeText(registrereActivity.this, "Skriv inn ditt fulle navn", Toast.LENGTH_SHORT).show();
-                    regName.setError("Navn er påkrevd");
-                    regName.requestFocus();
-                    return;
-                } else if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(registrereActivity.this, "Skriv inn emailen din", Toast.LENGTH_SHORT).show();
-                    regEmail.setError("Email er påkrevd");
-                    regEmail.requestFocus();
-                    return;
-                } else if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    regEmail.setError("Skriv en gyldig Email adresse");
-                    regEmail.requestFocus();
-                    return;
-                } else if (TextUtils.isEmpty(passord)) {
-                    Toast.makeText(registrereActivity.this, "Skriv inn ønsket passord", Toast.LENGTH_SHORT).show();
-                    regPass.setError("Passord er påkrevd");
-                    regPass.requestFocus();
-                    return;
-                } else if (passord.length() < 6) {
-                    regPass.setError("Passord må være lengre enn 6 karakterer");
-                    regPass.requestFocus();
-                    return;
-                } else if (TextUtils.isEmpty(telefon)) {
-                    Toast.makeText(registrereActivity.this, "Skriv inn ditt telefonnummer", Toast.LENGTH_SHORT).show();
-                    regTlf.setError("Telefon er påkrevd");
-                    regTlf.requestFocus();
-                } else if (telefon.length() != 8) {
-                    Toast.makeText(registrereActivity.this, "Skriv inn et gyldig telefonnummer", Toast.LENGTH_SHORT).show();
-                    regTlf.setError("Telefonnummer må bestå av 8 siffer");
-                    regTlf.requestFocus();
-                } else
-                    fAuth.createUserWithEmailAndPassword(email, passord).addOnCompleteListener(registrereActivity.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(registrereActivity.this, "ERROR! Ny bruker ble ikke registrert", Toast.LENGTH_LONG).show();
+                private DatabaseReference mDatabase, newUser;
+                private FirebaseUser mCurrentUser;
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("users");
+                auth.createUserWithEmailAndPassword(email, passord)
+                        .addOnCompleteListener(registrereActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                Toast.makeText( registrereActivity.this,"creation of account was: " + task.isSuccessful(), Toast.LENGTH_SHORT).show();
 
-                            } else {
+                                if (!task.isSuccessful()) {
+                                    Toast.makeText(registrereActivity.this, "Authentication failed: " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                                } else {
+                                    mCurrentUser= task.getResult().getUser();
+                                            newUser=mDatabase.child(mCurrentUser.getUid());
 
-                                Toast.makeText(registrereActivity.this, "Ny bruker er registrert", Toast.LENGTH_LONG).show();
-                                FirebaseUser firebaseUser = fAuth.getCurrentUser();
-                                finish();
-                                Intent regIntent = new Intent(registrereActivity.this, velkommenActivity.class);
-                                startActivity(regIntent);
-                            }
-                        }
-                    });
+
+                                    newUser.child("").setValue(navn);
+                                    newUser.child("Passord").setValue(passord);
+                                    newUser.child("email").setValue(email);
+                                    newUser.child("Telefon").setValue(telefon)
+
+
+
+                                }
+                            });
             }
         });
     }
 }
+
 
