@@ -21,14 +21,17 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class registrereActivity extends AppCompatActivity {
     Intent recievedIntent = getIntent();
 
-    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("User"); //https://quizaton-8c937-default-rtdb.europe-west1.firebasedatabase.app/
+    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://quizaton-8c937-default-rtdb.firebaseio.com");
 
     private FirebaseAuth mAuth;
     private ImageView regLogo;
@@ -36,8 +39,6 @@ public class registrereActivity extends AppCompatActivity {
     private Button regButton;
     private ProgressBar regProg;
     private TextView regLoggInn;
-    private DatabaseReference databaseReference;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -119,11 +120,31 @@ public class registrereActivity extends AppCompatActivity {
                 }
 
                 else{
-                    databaseReference.child("users").child(telefon).child("Navn:").child(navn);
-                    databaseReference.child("users").child(telefon).child("Email:").child(email);
-                    databaseReference.child("users").child(telefon).child("Passord:").child(passord);
+                    databaseReference.child("Brukere").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                    Toast.makeText(registrereActivity.this,"")
+                            if (snapshot.hasChild(telefon)){
+                                Toast.makeText(registrereActivity.this,"Dette telefonnummeret er allerede registrert",Toast.LENGTH_SHORT).show();
+                            }else {
+
+                                databaseReference.child("Brukere").child(telefon).child("Navn:").child(navn);
+                                databaseReference.child("Brukere").child(telefon).child("Email:").child(email);
+                                databaseReference.child("Brukere").child(telefon).child("Passord:").child(passord);
+
+                                Toast.makeText(registrereActivity.this,"Ny bruker er registrert",Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+
                 }
 
 
