@@ -96,7 +96,7 @@ public class registrereActivity extends AppCompatActivity {
                                 Toast.makeText( registrereActivity.this,"creation of account was: " + task.isSuccessful(), Toast.LENGTH_SHORT).show();
 
                                 if (!task.isSuccessful()) {
-                                    Toast.makeText(registrereActivity.this, "Authentication failed: " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(registrereActivity.this, "Registrering feilet: " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                                 } else {
                                     mCurrentUser[0] = task.getResult().getUser();
                                             newUser[0] =mDatabase.child(mCurrentUser[0].getUid());
