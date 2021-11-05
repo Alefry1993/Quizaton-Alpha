@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,14 +32,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class registrereActivity extends AppCompatActivity {
     Intent recievedIntent = getIntent();
 
-    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://quizaton-8c937-default-rtdb.firebaseio.com");
-
     private FirebaseAuth mAuth;
     private ImageView regLogo;
     private EditText regName, regPass, regEmail, regTlf;
     private Button regButton;
     private ProgressBar regProg;
     private TextView regLoggInn;
+    private FirebaseAuth fAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -55,8 +55,8 @@ public class registrereActivity extends AppCompatActivity {
         regProg = (ProgressBar) findViewById(R.id.regProg);
         regLoggInn = (TextView) findViewById(R.id.regLoggInn);
 
-        if (mAuth.getCurrentUser() != null){
-            Intent userIntent = new Intent(getApplicationContext(),velkommenActivity.class);
+        if (mAuth.getCurrentUser() != null) {
+            Intent userIntent = new Intent(getApplicationContext(), velkommenActivity.class);
             startActivity(userIntent);
             finish();
         }
@@ -64,7 +64,7 @@ public class registrereActivity extends AppCompatActivity {
         regLoggInn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent regLoggInnIntent = new Intent(getApplicationContext(),logInActivity.class);
+                Intent regLoggInnIntent = new Intent(getApplicationContext(), logInActivity.class);
                 startActivity(regLoggInnIntent);
             }
         });
@@ -72,7 +72,7 @@ public class registrereActivity extends AppCompatActivity {
         regLogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent regLogoIntent = new Intent(getApplicationContext(),velkommenActivity.class);
+                Intent regLogoIntent = new Intent(getApplicationContext(), velkommenActivity.class);
                 startActivity(regLogoIntent);
             }
         });
@@ -85,69 +85,54 @@ public class registrereActivity extends AppCompatActivity {
                 String email = regEmail.getText().toString().trim();
                 String telefon = regTlf.getText().toString().trim();
 
-                if(navn.isEmpty()||passord.isEmpty()||email.isEmpty()){
-                    Toast.makeText(registrereActivity.this,"Fyll ut alle feltene!",Toast.LENGTH_SHORT).show();
-                }
-
-                else if (TextUtils.isEmpty(navn)){
+               if (TextUtils.isEmpty(navn)) {
+                    Toast.makeText(registrereActivity.this, "Skriv inn ditt fulle navn", Toast.LENGTH_SHORT).show();
                     regName.setError("Navn er påkrevd");
                     regName.requestFocus();
                     return;
-                }
-
-                else if (TextUtils.isEmpty(email)){
+                } else if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(registrereActivity.this, "Skriv inn emailen din", Toast.LENGTH_SHORT).show();
                     regEmail.setError("Email er påkrevd");
                     regEmail.requestFocus();
                     return;
-                }
-
-                else if (Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                } else if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     regEmail.setError("Skriv en gyldig Email adresse");
                     regEmail.requestFocus();
                     return;
-                }
-
-                else if (TextUtils.isEmpty(passord)){
+                } else if (TextUtils.isEmpty(passord)) {
+                    Toast.makeText(registrereActivity.this, "Skriv inn ønsket passord", Toast.LENGTH_SHORT).show();
                     regPass.setError("Passord er påkrevd");
                     regPass.requestFocus();
                     return;
-                }
-
-                else if(passord.length() < 6){
+                } else if (passord.length() < 6) {
                     regPass.setError("Passord må være lengre enn 6 karakterer");
                     regPass.requestFocus();
                     return;
-                }
-
-                else{
-                    databaseReference.child("Brukere").addListenerForSingleValueEvent(new ValueEventListener() {
+                } else if (TextUtils.isEmpty(telefon)) {
+                    Toast.makeText(registrereActivity.this, "Skriv inn ditt telefonnummer", Toast.LENGTH_SHORT).show();
+                    regTlf.setError("Telefon er påkrevd");
+                    regTlf.requestFocus();
+                } else if (telefon.length() != 8) {
+                    Toast.makeText(registrereActivity.this, "Skriv inn et gyldig telefonnummer", Toast.LENGTH_SHORT).show();
+                    regTlf.setError("Telefonnummer må bestå av 8 siffer");
+                    regTlf.requestFocus();
+                } else
+                    fAuth.createUserWithEmailAndPassword(email, passord).addOnCompleteListener(registrereActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(registrereActivity.this, "ERROR! Ny bruker ble ikke registrert", Toast.LENGTH_LONG).show();
 
-                            if (snapshot.hasChild(telefon)){
-                                Toast.makeText(registrereActivity.this,"Dette telefonnummeret er allerede registrert",Toast.LENGTH_SHORT).show();
-                            }else {
+                            } else {
 
-                                databaseReference.child("Brukere").child(telefon).child("Navn:").child(navn);
-                                databaseReference.child("Brukere").child(telefon).child("Email:").child(email);
-                                databaseReference.child("Brukere").child(telefon).child("Passord:").child(passord);
-
-                                Toast.makeText(registrereActivity.this,"Ny bruker er registrert",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(registrereActivity.this, "Ny bruker er registrert", Toast.LENGTH_LONG).show();
+                                FirebaseUser firebaseUser = fAuth.getCurrentUser();
                                 finish();
+                                Intent regIntent = new Intent(registrereActivity.this, velkommenActivity.class);
+                                startActivity(regIntent);
                             }
-
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
                         }
                     });
-
-
-                }
-
-
             }
         });
     }
