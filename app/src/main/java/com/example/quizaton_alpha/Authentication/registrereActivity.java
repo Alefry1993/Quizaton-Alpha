@@ -85,10 +85,11 @@ public class registrereActivity extends AppCompatActivity {
                 String email = regEmail.getText().toString().trim();
                 String telefon = regTlf.getText().toString().trim();
 
-                private DatabaseReference mDatabase, newUser;
-                private FirebaseUser mCurrentUser;
-                mDatabase = FirebaseDatabase.getInstance().getReference().child("users");
-                auth.createUserWithEmailAndPassword(email, passord)
+                DatabaseReference mDatabase;
+                final DatabaseReference[] newUser = new DatabaseReference[1];
+                final FirebaseUser[] mCurrentUser = new FirebaseUser[1];
+                mDatabase = FirebaseDatabase.getInstance().getReference().child("Brukere");
+                fAuth.createUserWithEmailAndPassword(email, passord)
                         .addOnCompleteListener(registrereActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -97,22 +98,22 @@ public class registrereActivity extends AppCompatActivity {
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(registrereActivity.this, "Authentication failed: " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                                 } else {
-                                    mCurrentUser= task.getResult().getUser();
-                                            newUser=mDatabase.child(mCurrentUser.getUid());
+                                    mCurrentUser[0] = task.getResult().getUser();
+                                            newUser[0] =mDatabase.child(mCurrentUser[0].getUid());
 
 
-                                    newUser.child("").setValue(navn);
-                                    newUser.child("Passord").setValue(passord);
-                                    newUser.child("email").setValue(email);
-                                    newUser.child("Telefon").setValue(telefon)
-
-
-
+                                    mDatabase.child("Brukere").child("Navn").setValue(navn);
+                                    mDatabase.child("Brukere").child("Passord").setValue(passord);
+                                    mDatabase.child("Brukere").child("email").setValue(email);
+                                    mDatabase.child("Brukere").child("Telefon").setValue(telefon);
                                 }
-                            });
+                            }
+                        });
             }
         });
     }
 }
+
+
 
 
