@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.quizaton_alpha.Activities.MainActivity;
 import com.example.quizaton_alpha.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -55,12 +56,6 @@ public class registrereActivity extends AppCompatActivity {
         regProg = (ProgressBar) findViewById(R.id.regProg);
         regLoggInn = (TextView) findViewById(R.id.regLoggInn);
 
-        if (mAuth.getCurrentUser() != null) {
-            Intent userIntent = new Intent(getApplicationContext(), velkommenActivity.class);
-            startActivity(userIntent);
-            finish();
-        }
-
         regLoggInn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,6 +80,36 @@ public class registrereActivity extends AppCompatActivity {
                 String email = regEmail.getText().toString().trim();
                 String telefon = regTlf.getText().toString().trim();
 
+                if (TextUtils.isEmpty(navn)) {
+                    regName.setError("Navn er påkrevd");
+                    regName.requestFocus();
+                    return;
+                } else if (TextUtils.isEmpty(telefon)) {
+                    regTlf.setError("Telefon er påkrevd");
+                    regTlf.requestFocus();
+                    return;
+                } else if (telefon.length() != 8) {
+                    regTlf.setError("Telefonnummer må bestå av 8 siffer");
+                    regTlf.requestFocus();
+                    return;
+                } else if (TextUtils.isEmpty(email)) {
+                    regEmail.setError("Email er påkrevd");
+                    regEmail.requestFocus();
+                    return;
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    regEmail.setError("Skriv inn en gyldig Email adresse");
+                    regEmail.requestFocus();
+                    return;
+                } else if (TextUtils.isEmpty(passord)) {
+                    regPass.setError("Passord er påkrevd");
+                    regPass.requestFocus();
+                    return;
+                } else if (passord.length() < 6) {
+                    regPass.setError("Passord må være lengre enn 6 karakterer");
+                    regPass.requestFocus();
+                    return;
+                }
+                regProg.setVisibility(View.VISIBLE);
                 DatabaseReference mDatabase;
                 final DatabaseReference[] newUser = new DatabaseReference[1];
                 final FirebaseUser[] mCurrentUser = new FirebaseUser[1];
@@ -93,7 +118,7 @@ public class registrereActivity extends AppCompatActivity {
                         .addOnCompleteListener(registrereActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                Toast.makeText( registrereActivity.this,"creation of account was: " + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText( registrereActivity.this,"Ny bruker er registrert. Velkommen: "+ navn, Toast.LENGTH_SHORT).show();
 
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(registrereActivity.this, "Registrering feilet: " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
@@ -106,6 +131,10 @@ public class registrereActivity extends AppCompatActivity {
                                     mDatabase.child("Brukere").child("Passord").setValue(passord);
                                     mDatabase.child("Brukere").child("email").setValue(email);
                                     mDatabase.child("Brukere").child("Telefon").setValue(telefon);
+
+
+                                    Intent regIntent = new Intent(getApplicationContext(), MainActivity.class);
+                                    startActivity(regIntent);
                                 }
                             }
                         });

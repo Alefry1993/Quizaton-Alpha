@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quizaton_alpha.Activities.MainActivity;
 import com.example.quizaton_alpha.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class logInActivity extends AppCompatActivity {
     private ImageView logo;
@@ -21,12 +22,15 @@ public class logInActivity extends AppCompatActivity {
     private Button signIn;
     private TextView glemtPass;
     private TextView registrer;
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
+        mAuth = FirebaseAuth.getInstance();
         logo = (ImageView) findViewById(R.id.logo);
         email = (EditText) findViewById(R.id.email);
         pass = (EditText) findViewById(R.id.pass);
