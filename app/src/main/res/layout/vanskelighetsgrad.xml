@@ -25,41 +25,53 @@
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:text="@string/lett"
-        android:textSize="15sp"
         android:textColor="@color/black"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <Button
         android:id="@+id/middelsButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:text="@string/middels"
-        android:textSize="15sp"
         android:textColor="@color/black"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.55" />
 
     <Button
         android:id="@+id/vanskeligButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:text="@string/vanskelig"
-        android:textSize="15sp"
         android:textColor="@color/black"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="0.85" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="415dp"
+        android:layout_height="56dp"
+        android:background="#00BCD4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
