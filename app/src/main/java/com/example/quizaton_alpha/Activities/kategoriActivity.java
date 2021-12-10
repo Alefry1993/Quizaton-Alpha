@@ -54,7 +54,7 @@ public class kategoriActivity extends AppCompatActivity {
         blandet1Button = findViewById(R.id.blandet1Button);
         blandet2Button = findViewById(R.id.blandet2Button);
         bottomNavigation = findViewById(R.id.bottom_navigation);
-        controller = Navigation.findNavController(this, R.id.fragment);
+        controller = Navigation.findNavController(this, R.id.fragments);
         NavigationUI.setupWithNavController(bottomNavigation, controller);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 

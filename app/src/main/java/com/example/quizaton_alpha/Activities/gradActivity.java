@@ -7,8 +7,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import com.example.quizaton_alpha.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class gradActivity extends AppCompatActivity {
 
@@ -16,6 +20,9 @@ public class gradActivity extends AppCompatActivity {
     private Button lettButton;
     private Button middelsButton;
     private Button vanskeligButton;
+    private BottomNavigationView bottomNavigation;
+    private NavController controller;
+
 
 
 
@@ -29,6 +36,9 @@ public class gradActivity extends AppCompatActivity {
         lettButton = findViewById(R.id.lettButton);
         middelsButton = findViewById(R.id.middelsButton);
         vanskeligButton = findViewById(R.id.vanskeligButton);
+        bottomNavigation = findViewById(R.id.bottom_navigation);
+        controller = Navigation.findNavController(this, R.id.fragments);
+        NavigationUI.setupWithNavController(bottomNavigation, controller);
 
 
         lettButton.setOnClickListener(new View.OnClickListener() {

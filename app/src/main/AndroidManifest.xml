@@ -33,7 +33,7 @@
             android:name=".Activities.sporsmalActivity"
             android:exported="true" />
         <activity
-            android:name=".Activities.gradActivity"
+            android:name=".Authentication.velkommenActivity"
             android:exported="true" />
         <activity
             android:name=".Activities.MainActivity"
@@ -42,7 +42,7 @@
             android:name=".Authentication.logInActivity"
             android:exported="true" />
         <activity
-            android:name=".Authentication.velkommenActivity"
+            android:name=".Activities.gradActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

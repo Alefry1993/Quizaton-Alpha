@@ -4,13 +4,11 @@
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home_black_24dp"
-
         android:title="@string/title_home" />
 
     <item
         android:id="@+id/lagsporsFragment"
         android:icon="@android:drawable/ic_menu_help"
-        android:iconTint="#2196F3"
         android:title="@string/lag_egne_sp_rsm_l" />
 
     <item

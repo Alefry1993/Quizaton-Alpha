@@ -8,11 +8,15 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import com.example.quizaton_alpha.R;
 import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -27,6 +31,8 @@ public class sporsmalActivity extends AppCompatActivity {
     private Button tenButton;
     private Button twentyButton;
     private ArrayList sporsmalList;
+    private BottomNavigationView bottomNavigation;
+    private NavController controller;
 
     private FirebaseFirestore firestoreDb;
     private CollectionReference spørsmålCollectionReference;
@@ -40,6 +46,9 @@ public class sporsmalActivity extends AppCompatActivity {
         fiveButton = findViewById(R.id.fiveButton);
         tenButton = findViewById(R.id.tenButton);
         twentyButton = findViewById(R.id.twentyButton);
+        bottomNavigation = findViewById(R.id.bottom_navigation);
+        controller = Navigation.findNavController(this, R.id.fragments);
+        NavigationUI.setupWithNavController(bottomNavigation, controller);
 
         firestoreDb = FirebaseFirestore.getInstance();
         sporsmalList = new ArrayList<>();
