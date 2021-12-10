@@ -39,13 +39,13 @@ public class registrereActivity extends AppCompatActivity {
     private Button regButton;
     private ProgressBar regProg;
     private TextView regLoggInn;
-    private FirebaseAuth fAuth = FirebaseAuth.getInstance();
+    private FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registrer);
-        mAuth = FirebaseAuth.getInstance();
+        fAuth = FirebaseAuth.getInstance();
 
         regLogo = (ImageView) findViewById(R.id.regLogo);
         regName = (EditText) findViewById(R.id.regName);
@@ -114,6 +114,7 @@ public class registrereActivity extends AppCompatActivity {
                 final DatabaseReference[] newUser = new DatabaseReference[1];
                 final FirebaseUser[] mCurrentUser = new FirebaseUser[1];
                 mDatabase = FirebaseDatabase.getInstance().getReference().child("Brukere");
+
                 fAuth.createUserWithEmailAndPassword(email, passord)
                         .addOnCompleteListener(registrereActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
