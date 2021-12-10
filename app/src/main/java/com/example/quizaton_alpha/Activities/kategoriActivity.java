@@ -43,7 +43,9 @@ public class kategoriActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.kategori);
         Intent recievedIntent = getIntent();
-
+        bottomNavigation = findViewById(R.id.bottom_navigation);
+        controller = Navigation.findNavController(this, R.id.fragments);
+        NavigationUI.setupWithNavController(bottomNavigation, controller);
         kategoriView = findViewById(R.id.kategoriView);
         geoButton = findViewById(R.id.geoButton);
         sportButton = findViewById(R.id.sportButton);
@@ -53,9 +55,7 @@ public class kategoriActivity extends AppCompatActivity {
         historieButton = findViewById(R.id.historieButton);
         blandet1Button = findViewById(R.id.blandet1Button);
         blandet2Button = findViewById(R.id.blandet2Button);
-        bottomNavigation = findViewById(R.id.bottom_navigation);
-        controller = Navigation.findNavController(this, R.id.fragments);
-        NavigationUI.setupWithNavController(bottomNavigation, controller);
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
