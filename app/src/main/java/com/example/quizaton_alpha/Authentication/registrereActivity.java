@@ -119,7 +119,7 @@ public class registrereActivity extends AppCompatActivity {
                         .addOnCompleteListener(registrereActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                Toast.makeText( registrereActivity.this,"Ny bruker er registrert. Velkommen: "+ navn, Toast.LENGTH_SHORT).show();
+                                Toast.makeText( registrereActivity.this,"Ny bruker er registrert. Velkommen Quizmaster: "+ navn, Toast.LENGTH_SHORT).show();
 
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(registrereActivity.this, "Registrering feilet: " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
