@@ -36,7 +36,7 @@
             android:name=".Activities.gradActivity"
             android:exported="true" />
         <activity
-            android:name=".Activities.MainActivity"
+            android:name=".Activities.forsideActivity"
             android:exported="true" />
         <activity
             android:name=".Authentication.logInActivity"

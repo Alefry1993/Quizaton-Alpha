@@ -23,7 +23,7 @@ public class popupActivity extends AppCompatActivity {
         menyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent menyIntent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent menyIntent = new Intent(getApplicationContext(), forsideActivity.class);
                 startActivity(menyIntent);
             }
         });

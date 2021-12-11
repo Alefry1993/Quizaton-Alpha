@@ -6,26 +6,31 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.quizaton_alpha.Authentication.logInActivity;
 import com.example.quizaton_alpha.R;
+import com.google.api.Authentication;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+public class forsideActivity extends AppCompatActivity {
     public static final String KEY_NAME = "name";
     private Button startButton;
     private Button egneButton;
     private Button scoreboardButton;
+    private Button logOutButton;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent recievedIntent = getIntent();
-        setContentView(R.layout.frontpage);
+        setContentView(R.layout.forside);
 
         startButton = (Button) findViewById(R.id.startButton);
         egneButton = (Button) findViewById(R.id.egneButton);
         scoreboardButton = (Button) findViewById(R.id.scoreboardButton);
+        logOutButton = (Button) findViewById(R.id.logOutButton);
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,4 +55,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(scoreboardIntent);
             }
         });
+
+        logOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(forsideActivity.this, "Du er nå logget ut. Velkommen tilbake! " ,Toast.LENGTH_SHORT).show();
+                Intent logOutIntent = new Intent(getApplicationContext(), com.example.quizaton_alpha.Authentication.velkommenActivity.class);
+                startActivity(logOutIntent);
+            }
+        });
     }}
+
+

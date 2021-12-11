@@ -16,15 +16,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.quizaton_alpha.Activities.MainActivity;
+import com.example.quizaton_alpha.Activities.forsideActivity;
 import com.example.quizaton_alpha.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class logInActivity extends AppCompatActivity {
     private ImageView logo;
@@ -89,7 +86,7 @@ public class logInActivity extends AppCompatActivity {
                     return;
                 }
                 signProg.setVisibility(View.VISIBLE);
-                
+
                 mAuth.signInWithEmailAndPassword(signEmail, passord)
                         .addOnCompleteListener(logInActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -99,7 +96,7 @@ public class logInActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) { ;
                                     Toast.makeText( logInActivity.this,"Du er logget inn. Velkommen tilbake Quizmaster!", Toast.LENGTH_SHORT).show();
 
-                                    Intent signIntent = new Intent(getApplicationContext(), MainActivity.class);
+                                    Intent signIntent = new Intent(getApplicationContext(), forsideActivity.class);
                                     startActivity(signIntent);
                                 }else{
                                     Toast.makeText(logInActivity.this, "Logg inn feilet: " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
