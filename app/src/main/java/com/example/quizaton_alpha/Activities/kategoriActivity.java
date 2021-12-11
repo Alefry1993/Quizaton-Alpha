@@ -12,8 +12,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
+import com.example.quizaton_alpha.databinding.KategoriBinding;
 import com.example.quizaton_alpha.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -35,6 +36,7 @@ public class kategoriActivity extends AppCompatActivity {
     private Button blandet2Button;
     private BottomNavigationView bottomNavigation;
     private NavController controller;
+    private KategoriBinding binding;
 
 
     private static final String TAG = "DocSnippets";
@@ -43,9 +45,7 @@ public class kategoriActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.kategori);
         Intent recievedIntent = getIntent();
-        bottomNavigation = findViewById(R.id.bottom_navigation);
-        controller = Navigation.findNavController(this, R.id.fragments);
-        NavigationUI.setupWithNavController(bottomNavigation, controller);
+
         kategoriView = findViewById(R.id.kategoriView);
         geoButton = findViewById(R.id.geoButton);
         sportButton = findViewById(R.id.sportButton);
@@ -57,6 +57,19 @@ public class kategoriActivity extends AppCompatActivity {
         blandet2Button = findViewById(R.id.blandet2Button);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        //Bottom navigation
+        binding = KategoriBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        BottomNavigationView navView = findViewById(R.id.bottom_navigation);
+
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.homeFragment, R.id.lagsporsFragment, R.id.scoreboardFragment,R.id.profileFragment)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.fragments);
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(binding.bottomNavigation, navController);
 
 
         geoButton.setOnClickListener(new View.OnClickListener() {

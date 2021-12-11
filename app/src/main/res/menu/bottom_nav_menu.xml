@@ -16,4 +16,9 @@
         android:icon="@android:drawable/btn_star_big_on"
         android:title="@string/scoreboard" />
 
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@android:drawable/btn_star_big_on"
+        android:title="Profile" />
+
 </menu>
