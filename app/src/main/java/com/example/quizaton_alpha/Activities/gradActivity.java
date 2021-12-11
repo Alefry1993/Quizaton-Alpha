@@ -11,7 +11,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import com.example.quizaton_alpha.databinding.VanskelighetsgradBinding;
+
 import com.example.quizaton_alpha.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -23,7 +23,7 @@ public class gradActivity extends AppCompatActivity {
     private Button vanskeligButton;
     private BottomNavigationView bottomNavigation;
     private NavController controller;
-    private VanskelighetsgradBinding binding;
+
 
 
 
@@ -40,17 +40,11 @@ public class gradActivity extends AppCompatActivity {
         vanskeligButton = findViewById(R.id.vanskeligButton);
 
         //Bottom Navigation
-        binding = VanskelighetsgradBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+
 
         bottomNavigation = findViewById(R.id.bottom_navigation);
-
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.homeFragment, R.id.lagsporsFragment, R.id.scoreboardFragment,R.id.profileFragment)
-                .build();
         controller = Navigation.findNavController(this, R.id.fragments);
-        NavigationUI.setupActionBarWithNavController(this, controller, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.bottomNavigation, controller);
+        NavigationUI.setupWithNavController(bottomNavigation, controller);
 
 
         lettButton.setOnClickListener(new View.OnClickListener() {

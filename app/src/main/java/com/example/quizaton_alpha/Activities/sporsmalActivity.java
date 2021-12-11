@@ -5,17 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
 import com.example.quizaton_alpha.R;
-import com.example.quizaton_alpha.databinding.AntallsporsmalBinding;
-import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -35,7 +31,7 @@ public class sporsmalActivity extends AppCompatActivity {
     private ArrayList sporsmalList;
     private BottomNavigationView bottomNavigation;
     private NavController controller;
-    private AntallsporsmalBinding binding;
+
     private FirebaseFirestore firestoreDb;
     private CollectionReference spørsmålCollectionReference;
 
@@ -56,17 +52,9 @@ public class sporsmalActivity extends AppCompatActivity {
         spørsmålCollectionReference = firestoreDb.collection("spørsmål");
 
         //Bottom Navigation
-        binding = AntallsporsmalBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
         bottomNavigation = findViewById(R.id.bottom_navigation);
-
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.homeFragment, R.id.lagsporsFragment, R.id.scoreboardFragment,R.id.profileFragment)
-                .build();
         controller = Navigation.findNavController(this, R.id.fragments);
-        NavigationUI.setupActionBarWithNavController(this, controller, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.bottomNavigation, controller);
+        NavigationUI.setupWithNavController(bottomNavigation, controller);
 
 
         fiveButton.setOnClickListener(new View.OnClickListener() {

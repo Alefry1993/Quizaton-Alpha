@@ -115,23 +115,40 @@ public class registrereActivity extends AppCompatActivity {
                         .addOnCompleteListener(registrereActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                Toast.makeText( registrereActivity.this,"Ny bruker er registrert. Velkommen Quizmaster: "+ navn, Toast.LENGTH_SHORT).show();
 
                                 if (!task.isSuccessful()) {
-                                    Toast.makeText(registrereActivity.this, "Registrering feilet: " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-                                } else {
-                                    mCurrentUser[0] = task.getResult().getUser();
-                                            newUser[0] =mDatabase.child(mCurrentUser[0].getUid());
 
 
-                                    mDatabase.child("Brukere").child("Navn").setValue(navn);
-                                    mDatabase.child("Brukere").child("Passord").setValue(passord);
-                                    mDatabase.child("Brukere").child("email").setValue(email);
-                                    mDatabase.child("Brukere").child("Telefon").setValue(telefon);
+                                    bruker nyBruker = new bruker(navn,email,telefon);
+                                    FirebaseDatabase.getInstance().getReference("Brukere")
+                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                            .setValue(nyBruker).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+
+                                            if (task.isSuccessful()){
+                                                Toast.makeText( registrereActivity.this,"Ny bruker er registrert. Velkommen Quizmaster: "+ navn, Toast.LENGTH_SHORT).show();
+
+                                                mCurrentUser[0] = task.getResult().getUser();
+                                                newUser[0] =mDatabase.child(mCurrentUser[0].getUid());
 
 
-                                    Intent regIntent = new Intent(getApplicationContext(), forsideActivity.class);
-                                    startActivity(regIntent);
+                                                mDatabase.child("Brukere").child("Navn").setValue(navn);
+                                                mDatabase.child("Brukere").child("Passord").setValue(passord);
+                                                mDatabase.child("Brukere").child("email").setValue(email);
+                                                mDatabase.child("Brukere").child("Telefon").setValue(telefon);
+
+
+                                                Intent regIntent = new Intent(getApplicationContext(), forsideActivity.class);
+                                                startActivity(regIntent);
+
+                                            }else {
+                                                Toast.makeText(registrereActivity.this, "Registrering feilet: " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                                            }
+
+                                        }
+                                    });
+
                                 }
                             }
                         });

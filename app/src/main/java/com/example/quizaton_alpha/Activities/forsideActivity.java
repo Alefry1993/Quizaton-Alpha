@@ -30,7 +30,7 @@ public class forsideActivity extends AppCompatActivity {
         startButton = (Button) findViewById(R.id.startButton);
         egneButton = (Button) findViewById(R.id.egneButton);
         scoreboardButton = (Button) findViewById(R.id.scoreboardButton);
-        logOutButton = (Button) findViewById(R.id.logOutButton);
+
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,16 +53,6 @@ public class forsideActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent scoreboardIntent = new Intent(getApplicationContext(),scoreboardActivity.class);
                 startActivity(scoreboardIntent);
-            }
-        });
-
-        logOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Toast.makeText(forsideActivity.this, "Du er nå logget ut. Velkommen tilbake! " ,Toast.LENGTH_SHORT).show();
-                Intent logOutIntent = new Intent(getApplicationContext(), com.example.quizaton_alpha.Authentication.velkommenActivity.class);
-                startActivity(logOutIntent);
             }
         });
     }}
