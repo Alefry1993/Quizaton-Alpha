@@ -1,6 +1,7 @@
 package com.example.quizaton_alpha.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
@@ -20,7 +21,7 @@ public class forsideActivity extends AppCompatActivity {
     public static final String KEY_NAME = "name";
     private Button startButton, egneButton, scoreboardButton, logOutButton;
     private BottomNavigationView bottomNavigation;
-    private 
+    private NavController controller;
 
 
 
