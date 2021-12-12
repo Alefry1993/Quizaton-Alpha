@@ -47,7 +47,7 @@
         app:layout_constraintVertical_bias="0.368" />
 
     <Button
-        android:id="@+id/logOutButton"
+        android:id="@+id/profilButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:text="@string/min_profil"

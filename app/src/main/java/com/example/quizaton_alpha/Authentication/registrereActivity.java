@@ -116,16 +116,6 @@ public class registrereActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
 
-                                if (!task.isSuccessful()) {
-
-
-                                    bruker nyBruker = new bruker(navn,email,telefon);
-                                    FirebaseDatabase.getInstance().getReference("Brukere")
-                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                            .setValue(nyBruker).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-
                                             if (task.isSuccessful()){
                                                 Toast.makeText( registrereActivity.this,"Ny bruker er registrert. Velkommen Quizmaster: "+ navn, Toast.LENGTH_SHORT).show();
 
@@ -144,13 +134,10 @@ public class registrereActivity extends AppCompatActivity {
 
                                             }else {
                                                 Toast.makeText(registrereActivity.this, "Registrering feilet: " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                                                regProg.setVisibility(View.GONE);
                                             }
 
                                         }
-                                    });
-
-                                }
-                            }
                         });
             }
         });

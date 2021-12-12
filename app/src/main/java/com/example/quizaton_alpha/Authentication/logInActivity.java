@@ -100,6 +100,7 @@ public class logInActivity extends AppCompatActivity {
                                     startActivity(signIntent);
                                 }else{
                                     Toast.makeText(logInActivity.this, "Logg inn feilet: " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                                    signProg.setVisibility(View.GONE);
 
 
                                 }

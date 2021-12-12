@@ -15,10 +15,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class forsideActivity extends AppCompatActivity {
     public static final String KEY_NAME = "name";
-    private Button startButton;
-    private Button egneButton;
-    private Button scoreboardButton;
-    private Button logOutButton;
+    private Button startButton, egneButton, scoreboardButton, profilButton;
+
+
 
 
     @Override
@@ -30,6 +29,7 @@ public class forsideActivity extends AppCompatActivity {
         startButton = (Button) findViewById(R.id.startButton);
         egneButton = (Button) findViewById(R.id.egneButton);
         scoreboardButton = (Button) findViewById(R.id.scoreboardButton);
+        profilButton = (Button) findViewById(R.id.profilButton);
 
 
         startButton.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +53,14 @@ public class forsideActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent scoreboardIntent = new Intent(getApplicationContext(),scoreboardActivity.class);
                 startActivity(scoreboardIntent);
+            }
+        });
+
+        profilButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent profilIntent = new Intent(getApplicationContext(),com.example.quizaton_alpha.Authentication.profileActivity.class);
+                startActivity(profilIntent);
             }
         });
     }}

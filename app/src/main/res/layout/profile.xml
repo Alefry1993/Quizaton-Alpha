@@ -76,7 +76,7 @@
 
 
     <Button
-        android:id="@+id/logOutButton"
+        android:id="@+id/profilButton"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:text="@string/logg_ut"
