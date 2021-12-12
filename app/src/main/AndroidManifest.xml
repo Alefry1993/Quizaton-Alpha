@@ -42,6 +42,15 @@
             android:name=".Authentication.logInActivity"
             android:exported="true" />
         <activity
+            android:name=".Activities.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.StartActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.ResultActivity"
+            android:exported="true" />
+        <activity
             android:name=".Authentication.velkommenActivity"
             android:exported="true">
             <intent-filter>
