@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.example.quizaton_alpha.R;
 
-public class forsideActivity extends AppC {
+public class forsideActivity extends AppCompatActivity {
     public static final String KEY_NAME = "name";
     private Button startButton, egneButton, scoreboardButton, logOutButton;
 
