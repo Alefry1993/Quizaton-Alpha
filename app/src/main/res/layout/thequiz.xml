@@ -19,7 +19,7 @@
         android:textColor="@color/white"></TextView>
 
     <TextView
-        android:id="@+id/sporsmalet"
+        android:id="@+id/sporsmal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/sporsmalsrunde"
@@ -34,12 +34,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/sporsmalet"
+        android:layout_below="@+id/sporsmal"
         android:layout_marginTop="50dp"
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/valg1Button"
+            android:id="@+id/svar1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -50,7 +50,7 @@
             android:textAllCaps="false"></Button>
 
         <Button
-            android:id="@+id/valg2Button"
+            android:id="@+id/svar2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -61,7 +61,7 @@
             android:textAllCaps="false"></Button>
 
         <Button
-            android:id="@+id/valg3Button"
+            android:id="@+id/svar3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -72,7 +72,7 @@
             android:textAllCaps="false"></Button>
 
         <Button
-            android:id="@+id/valg4Button"
+            android:id="@+id/svar4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
