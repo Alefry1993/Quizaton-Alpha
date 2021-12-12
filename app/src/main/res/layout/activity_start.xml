@@ -24,11 +24,13 @@
 
     <Spinner
         android:id="@+id/quizCate"
-        android:layout_width="wrap_content"
+        android:layout_width="83dp"
         android:layout_height="wrap_content"
-        android:entries="@array/quiz_category"
         android:layout_marginTop="30dp"
-        android:spinnerMode="dialog"/>
+        android:entries="@array/quiz_category"
+        android:minHeight="48dp"
+        android:spinnerMode="dialog"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:layout_width="wrap_content"

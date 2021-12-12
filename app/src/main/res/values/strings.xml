@@ -49,4 +49,11 @@
     <string name="title_notifications">Notifications</string>
     <string name="logg_ut">Logg ut</string>
     <string name="min_profil">Min Profil</string>
+    <string-array name="quiz_category">
+        <item>All</item>
+        <item>Asia</item>
+        <item>America</item>
+        <item>Europe</item>
+    </string-array>
+
 </resources>
