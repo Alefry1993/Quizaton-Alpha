@@ -33,7 +33,7 @@ public class geoquiz extends AppCompatActivity {
 
 
     String quizData[][] = {
-            {"Norge", "Oslo", "Bergen", "Trondheim", "Fredrikstad"},
+            {"Hva er hovedstaden i Norge?", "Oslo", "Bergen", "Trondheim", "Fredrikstad"},
             {"Sverige", "Stockholm", "Gøteborg", "Malmø", "Uppsala"},
             {"Danmark", "København", "Århus", "Odense", "Ålborg"}
     };
