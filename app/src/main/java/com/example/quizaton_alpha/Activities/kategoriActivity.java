@@ -47,10 +47,7 @@ public class kategoriActivity extends AppCompatActivity {
         blandet1Button = findViewById(R.id.blandet1Button);
         blandet2Button = findViewById(R.id.blandet2Button);
 
-        //FirebaseFirestore db = FirebaseFirestore.getInstance();
-
         //Bottom navigation
-
         bottomNavigation = findViewById(R.id.bottom_navigation);
         controller = Navigation.findNavController(this, R.id.fragmentis);
         NavigationUI.setupWithNavController(bottomNavigation, controller);
@@ -96,7 +93,7 @@ public class kategoriActivity extends AppCompatActivity {
         sportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startintent = new Intent(getApplicationContext(),thequiz.class);
+                Intent startintent = new Intent(getApplicationContext(),com.example.quizaton_alpha.quizkategorier.sportquiz.class);
                 startActivity(startintent);
             }
         });
@@ -104,7 +101,7 @@ public class kategoriActivity extends AppCompatActivity {
         vitenskapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startintent = new Intent(getApplicationContext(),thequiz.class);
+                Intent startintent = new Intent(getApplicationContext(),com.example.quizaton_alpha.quizkategorier.vitenskapquiz.class);
                 startActivity(startintent);
             }
         });
@@ -112,7 +109,7 @@ public class kategoriActivity extends AppCompatActivity {
         filmtvButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startintent = new Intent(getApplicationContext(),thequiz.class);
+                Intent startintent = new Intent(getApplicationContext(),com.example.quizaton_alpha.quizkategorier.filmtvquiz.class);
                 startActivity(startintent);
             }
         });
@@ -120,7 +117,7 @@ public class kategoriActivity extends AppCompatActivity {
         tekButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startintent = new Intent(getApplicationContext(),thequiz.class);
+                Intent startintent = new Intent(getApplicationContext(),com.example.quizaton_alpha.quizkategorier.teknologiquiz.class);
                 startActivity(startintent);
             }
         });
@@ -128,7 +125,7 @@ public class kategoriActivity extends AppCompatActivity {
         historieButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startintent = new Intent(getApplicationContext(),thequiz.class);
+                Intent startintent = new Intent(getApplicationContext(),com.example.quizaton_alpha.quizkategorier.historiequiz.class);
                 startActivity(startintent);
             }
         });
@@ -136,7 +133,7 @@ public class kategoriActivity extends AppCompatActivity {
         blandet1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startintent = new Intent(getApplicationContext(),thequiz.class);
+                Intent startintent = new Intent(getApplicationContext(),com.example.quizaton_alpha.quizkategorier.blandet1quiz.class);
                 startActivity(startintent);
             }
         });
@@ -144,15 +141,10 @@ public class kategoriActivity extends AppCompatActivity {
         blandet2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startintent = new Intent(getApplicationContext(),thequiz.class);
+                Intent startintent = new Intent(getApplicationContext(),com.example.quizaton_alpha.quizkategorier.blandet2quiz.class);
                 startActivity(startintent);
             }
         });
 
     }
-
-    /*public void startQuiz(View view) {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.putExtra("QUIZ_CATEGORY", quizCategory);
-    }*/
 }

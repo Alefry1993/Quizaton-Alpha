@@ -51,14 +51,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.thequiz);
 
-        countLabel = findViewById(R.id.countLabel);
-        questionLabel = findViewById(R.id.questionLabel);
-        answerBtn1 = findViewById(R.id.answerBtn1);
-        answerBtn2 = findViewById(R.id.answerBtn2);
-        answerBtn3 = findViewById(R.id.answerBtn3);
-        answerBtn4 = findViewById(R.id.answerBtn4);
+        countLabel = findViewById(R.id.sporsmal);
+        questionLabel = findViewById(R.id.sporsmalsrunde);
+        answerBtn1 = findViewById(R.id.svar1);
+        answerBtn2 = findViewById(R.id.svar2);
+        answerBtn3 = findViewById(R.id.svar3);
+        answerBtn4 = findViewById(R.id.svar4);
 
         // Receive quizCategory from StartActivity.
         int quizCategory = getIntent().getIntExtra("QUIZ_CATEGORY", 0);

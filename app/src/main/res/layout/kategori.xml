@@ -33,12 +33,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.1" />
 
-    <Button
+    <Spinner
         android:id="@+id/geoButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:text="@string/geografi"
         android:textColor="@color/black"
+        android:spinnerMode="dialog"
+        android:entries="@array/quiz_kategori"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"

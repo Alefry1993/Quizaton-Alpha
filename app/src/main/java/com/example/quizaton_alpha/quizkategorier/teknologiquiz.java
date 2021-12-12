@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class geoquiz extends AppCompatActivity {
+public class teknologiquiz extends AppCompatActivity {
     private TextView sporsmalsrunde, sporsmal;
     private Button svar1, svar2, svar3, svar4, tilbake;
     private String riktigSvar;
@@ -33,40 +33,9 @@ public class geoquiz extends AppCompatActivity {
 
 
     String quizData[][] = {
-            //Europa
             {"Hva er hovedstaden i Norge?", "Oslo", "Bergen", "Trondheim", "Fredrikstad"},
-            {"Hva er hovedstaden i Sverige?", "Stockholm", "Göteborg", "Malmö", "Uppsala"},
-            {"Hva er hovedstaden i Danmark?", "København", "Århus", "Odense", "Ålborg"},
-            {"Hva er hovedstaden i Spania?", "Madrid", "Zaragoza", "Bilbao", "Salamanca"},
-            {"Hva er hovedstaden i Moldova?", "Chișinău", "Tiraspol", "Balti", "Riscani"},
-
-            //Amerika
-            {"Hva er hovedstaden i Guyana?", "Georgetown", "Toka", "Corriverton", "Noitgedacht"},
-            {"Hva er hovedstaden i Canada?", "Ottawa", "Vancouver", "Calgary", "Winnipeg"},
-            {"Hva er hovedstaden i Argentina?", "Buenos Aires", "San Rafael", "Bahia Blanca", "Mendoza"},
-            {"Hva er hovedstaden i Mexico?", "Mexico City", "Monterrey", "Matamoros", "Guadalajara"},
-            {"Hva er hovedstaden i Surinam?", "Paramaribo", "Affobakka", "Kwamalasamutu", "Peleloetepu"},
-
-            //Asia
-            {"Hva er hovedstaden i Kina?", "Beijing", "Chengdu", "Chongqing", "Wuhan"},
-            {"Hva er hovedstaden i Sør-korea?", "Seoul", "Busan", "Daejeon", "Daegu"},
-            {"Hva er hovedstaden i Pakistan?", "Islamabad", "Faisalabad", "Lahore", "Multan"},
-            {"Hva er hovedstaden i India?", "Mexico City", "Monterrey", "Matamoros", "Guadalajara"},
-            {"Hva er hovedstaden i Surinam?", "Paramaribo", "Affobakka", "Kwamalasamutu", "Peleloetepu"},
-
-            //Oseania
-            {"Hva er hovedstaden i Guyana?", "Georgetown", "Toka", "Corriverton", "Noitgedacht"},
-            {"Hva er hovedstaden i Canada?", "Ottawa", "Vancouver", "Calgary", "Winnipeg"},
-            {"Hva er hovedstaden i Argentina?", "Buenos Aires", "San Rafael", "Bahia Blanca", "Mendoza"},
-            {"Hva er hovedstaden i Mexico?", "Mexico City", "Monterrey", "Matamoros", "Guadalajara"},
-            {"Hva er hovedstaden i Surinam?", "Paramaribo", "Affobakka", "Kwamalasamutu", "Peleloetepu"}
-
-            //Afrika
-            {"Hva er hovedstaden i Guyana?", "Georgetown", "Toka", "Corriverton", "Noitgedacht"},
-            {"Hva er hovedstaden i Canada?", "Ottawa", "Vancouver", "Calgary", "Winnipeg"},
-            {"Hva er hovedstaden i Argentina?", "Buenos Aires", "San Rafael", "Bahia Blanca", "Mendoza"},
-            {"Hva er hovedstaden i Mexico?", "Mexico City", "Monterrey", "Matamoros", "Guadalajara"},
-            {"Hva er hovedstaden i Surinam?", "Paramaribo", "Affobakka", "Kwamalasamutu", "Peleloetepu"}
+            {"Sverige", "Stockholm", "Gøteborg", "Malmø", "Uppsala"},
+            {"Danmark", "København", "Århus", "Odense", "Ålborg"}
     };
 
 

@@ -58,11 +58,13 @@
     <string name="svar_1">Svar 1</string>
     <string name="svar_4">Svar 4</string>
     <string name="svar_3">Svar 3</string>
-    <string-array name="quiz_category">
+    <string-array name="quiz_kategori">
         <item>All</item>
         <item>Asia</item>
-        <item>America</item>
-        <item>Europe</item>
+        <item>Afrika</item>
+        <item>Amerika</item>
+        <item>Europa</item>
+        <item>Oseania</item>
     </string-array>
 
 </resources>
