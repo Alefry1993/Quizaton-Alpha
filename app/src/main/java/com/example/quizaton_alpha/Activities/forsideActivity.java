@@ -1,6 +1,8 @@
 package com.example.quizaton_alpha.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import android.app.AppComponentFactory;
 import android.content.Intent;
@@ -12,10 +14,13 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.quizaton_alpha.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class forsideActivity extends AppCompatActivity {
     public static final String KEY_NAME = "name";
     private Button startButton, egneButton, scoreboardButton, logOutButton;
+    private BottomNavigationView bottomNavigation;
+    private 
 
 
 
@@ -30,6 +35,10 @@ public class forsideActivity extends AppCompatActivity {
         egneButton = (Button) findViewById(R.id.egneButton);
         scoreboardButton = (Button) findViewById(R.id.scoreboardButton);
         logOutButton = (Button) findViewById(R.id.logOutButton);
+
+        bottomNavigation = findViewById(R.id.bottom_navigation);
+        controller = Navigation.findNavController(this, R.id.fragments);
+        NavigationUI.setupWithNavController(bottomNavigation, controller);
 
 
 
