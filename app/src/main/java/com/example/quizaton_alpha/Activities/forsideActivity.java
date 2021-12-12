@@ -37,7 +37,7 @@ public class forsideActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startintent = new Intent(getApplicationContext(),kategoriActivity.class);
+                Intent startintent = new Intent(getApplicationContext(),StartActivity.class);
                 startActivity(startintent);
             }
         });
