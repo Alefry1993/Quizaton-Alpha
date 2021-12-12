@@ -17,7 +17,7 @@
         android:title="@string/scoreboard" />
 
     <item
-        android:id="@+id/profileFragment"
+        android:id="@+id/logOutFragment"
         android:icon="@drawable/ic_baseline_logout_24"
         android:title="@string/logg_ut" />
 

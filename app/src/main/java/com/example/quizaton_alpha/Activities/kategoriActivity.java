@@ -60,9 +60,9 @@ public class kategoriActivity extends AppCompatActivity {
 
         //Bottom navigation
 
-        BottomNavigationView navView = findViewById(R.id.bottom_navigation);
-        NavController navController = Navigation.findNavController(this, R.id.fragments);
-        NavigationUI.setupWithNavController(bottomNavigation, navController);
+        bottomNavigation = findViewById(R.id.bottom_navigation);
+        controller = Navigation.findNavController(this, R.id.fragments);
+        NavigationUI.setupWithNavController(bottomNavigation, controller);
 
 
         geoButton.setOnClickListener(new View.OnClickListener() {
