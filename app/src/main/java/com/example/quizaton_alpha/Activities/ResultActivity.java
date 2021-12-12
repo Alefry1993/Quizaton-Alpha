@@ -1,4 +1,4 @@
-package com.example.quizaton_alpha.Activities;
+/*package com.example.quizaton_alpha.Activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -38,4 +38,4 @@ public class ResultActivity extends AppCompatActivity {
     public void returnTop(View view) {
         startActivity(new Intent(getApplicationContext(), StartActivity.class));
     }
-}
+}*/

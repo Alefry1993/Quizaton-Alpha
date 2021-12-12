@@ -1,4 +1,4 @@
-package com.example.quizaton_alpha.Activities;
+/*package com.example.quizaton_alpha.Activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -155,4 +155,4 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
-}
+}*/
