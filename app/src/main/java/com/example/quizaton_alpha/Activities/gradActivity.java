@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.quizaton_alpha.R;
@@ -43,7 +42,7 @@ public class gradActivity extends AppCompatActivity {
 
 
         bottomNavigation = findViewById(R.id.bottom_navigation);
-        controller = Navigation.findNavController(this, R.id.fragments);
+        controller = Navigation.findNavController(this, R.id.fragmentis);
         NavigationUI.setupWithNavController(bottomNavigation, controller);
 
 

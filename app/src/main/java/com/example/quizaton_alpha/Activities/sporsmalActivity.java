@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import com.example.quizaton_alpha.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -53,7 +52,7 @@ public class sporsmalActivity extends AppCompatActivity {
 
         //Bottom Navigation
         bottomNavigation = findViewById(R.id.bottom_navigation);
-        controller = Navigation.findNavController(this, R.id.fragments);
+        controller = Navigation.findNavController(this, R.id.fragmentis);
         NavigationUI.setupWithNavController(bottomNavigation, controller);
 
 

@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import com.example.quizaton_alpha.R;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,7 @@ public class ResultActivity extends AppCompatActivity {
 
         TextView resultLabel = findViewById(R.id.resultLabel);
         TextView totalScoreLabel = findViewById(R.id.totalScoreLabel);
+        Button button = findViewById(R.id.tilbakeQuiz);
 
         int score = getIntent().getIntExtra("RIGHT_ANSWER_COUNT", 0);
 
@@ -33,9 +35,15 @@ public class ResultActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt("TOTAL_SCORE", totalScore);
         editor.apply();
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startintent = new Intent(getApplicationContext(), kategoriActivity.class);
+                startActivity(startintent);
+            }
+        });
     }
 
-    public void returnTop(View view) {
-        startActivity(new Intent(getApplicationContext(), StartActivity.class));
-    }
+
 }

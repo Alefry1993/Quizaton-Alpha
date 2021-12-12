@@ -35,11 +35,12 @@
         android:layout_marginTop="60dp"/>
 
     <Button
+        android:id="@+id/tilbakeQuiz"
         android:layout_width="140dp"
         android:layout_height="60dp"
-        android:text="Tilbake"
-        android:textSize="18sp"
-        android:textColor="@color/black"
         android:layout_marginTop="80dp"
-        android:onClick="tilbake"/>
+        android:onClick="tilbake"
+        android:text="Tilbake"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 </LinearLayout>

@@ -8,7 +8,7 @@
     tools:context=".Activities.sporsmalActivity">
 
     <fragment
-        android:id="@+id/fragments"
+        android:id="@+id/fragmentis"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"

@@ -2,26 +2,17 @@ package com.example.quizaton_alpha.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.quizaton_alpha.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 public class kategoriActivity extends AppCompatActivity {
 
@@ -61,7 +52,7 @@ public class kategoriActivity extends AppCompatActivity {
         //Bottom navigation
 
         bottomNavigation = findViewById(R.id.bottom_navigation);
-        controller = Navigation.findNavController(this, R.id.fragments);
+        controller = Navigation.findNavController(this, R.id.fragmentis);
         NavigationUI.setupWithNavController(bottomNavigation, controller);
 
 
