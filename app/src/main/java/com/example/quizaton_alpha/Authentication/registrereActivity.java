@@ -106,10 +106,7 @@ public class registrereActivity extends AppCompatActivity {
                     return;
                 }
                 regProg.setVisibility(View.VISIBLE);
-                DatabaseReference mDatabase;
-                final DatabaseReference[] newUser = new DatabaseReference[1];
-                final FirebaseUser[] mCurrentUser = new FirebaseUser[1];
-                mDatabase = FirebaseDatabase.getInstance().getReference().child("Brukere");
+
 
                 fAuth.createUserWithEmailAndPassword(email, passord)
                         .addOnCompleteListener(registrereActivity.this, new OnCompleteListener<AuthResult>() {
@@ -118,7 +115,10 @@ public class registrereActivity extends AppCompatActivity {
 
                                             if (task.isSuccessful()){
                                                 Toast.makeText( registrereActivity.this,"Ny bruker er registrert. Velkommen Quizmaster: "+ navn, Toast.LENGTH_SHORT).show();
-
+                                                DatabaseReference mDatabase;
+                                                final DatabaseReference[] newUser = new DatabaseReference[1];
+                                                final FirebaseUser[] mCurrentUser = new FirebaseUser[1];
+                                                mDatabase = FirebaseDatabase.getInstance().getReference().child("Brukere");
                                                 mCurrentUser[0] = task.getResult().getUser();
                                                 newUser[0] =mDatabase.child(mCurrentUser[0].getUid());
 
