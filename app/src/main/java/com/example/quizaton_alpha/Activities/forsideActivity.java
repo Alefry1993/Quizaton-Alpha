@@ -6,17 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+<<<<<<< HEAD
 import android.widget.Spinner;
 import android.widget.Toast;
+=======
+>>>>>>> d783f7939c1054109240261285b3360b62466165
 
-import com.example.quizaton_alpha.Authentication.logInActivity;
 import com.example.quizaton_alpha.R;
-import com.google.api.Authentication;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class forsideActivity extends AppCompatActivity {
     public static final String KEY_NAME = "name";
-    private Button startButton, egneButton, scoreboardButton, profilButton;
+    private Button startButton, egneButton, scoreboardButton, logOutButton;
 
 
 
@@ -30,7 +30,7 @@ public class forsideActivity extends AppCompatActivity {
         startButton = (Button) findViewById(R.id.startButton);
         egneButton = (Button) findViewById(R.id.egneButton);
         scoreboardButton = (Button) findViewById(R.id.scoreboardButton);
-        profilButton = (Button) findViewById(R.id.profilButton);
+        logOutButton = (Button) findViewById(R.id.logOutButton);
 
 
 
@@ -38,8 +38,12 @@ public class forsideActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 Intent startintent = new Intent(getApplicationContext(),StartActivity.class);
                 startintent.putExtra("QUIZ_KATEGORI", quizKategori);
+=======
+                Intent startintent = new Intent(getApplicationContext(),gradActivity.class);
+>>>>>>> d783f7939c1054109240261285b3360b62466165
                 startActivity(startintent);
             }
         });
@@ -60,11 +64,11 @@ public class forsideActivity extends AppCompatActivity {
             }
         });
 
-        profilButton.setOnClickListener(new View.OnClickListener() {
+        logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent profilIntent = new Intent(getApplicationContext(),com.example.quizaton_alpha.Authentication.profileActivity.class);
-                startActivity(profilIntent);
+                Intent logOutIntent = new Intent(getApplicationContext(),com.example.quizaton_alpha.Authentication.velkommenActivity.class);
+                startActivity(logOutIntent);
             }
         });
     }
