@@ -40,5 +40,5 @@ public class resultatActivity extends AppCompatActivity {
     public void returnBack(View view) {
         startActivity(new Intent(getApplicationContext(), forsideActivity.class));
     }
-    
+
 }
