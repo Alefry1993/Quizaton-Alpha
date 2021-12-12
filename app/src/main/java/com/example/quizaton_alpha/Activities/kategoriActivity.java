@@ -92,6 +92,15 @@ public class kategoriActivity extends AppCompatActivity {
             }
         });*/
 
+        geoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startintent = new Intent(getApplicationContext(), com.example.quizaton_alpha.quizkategorier.geoquiz.class);
+                startActivity(startintent);
+            }
+        });
+
+
         sportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
