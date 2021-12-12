@@ -51,6 +51,13 @@
     <string name="min_profil">Min Profil</string>
     <string name="hjem">Hjem</string>
     <string name="string_hjem" />
+    <string name="avslutt_quiz">Avslutt Quiz</string>
+    <string name="svar_2">Svar 2</string>
+    <string name="sp_rsm_l">Spørsmål</string>
+    <string name="antall_sp_rsm_l">Antall spørsmål</string>
+    <string name="svar_1">Svar 1</string>
+    <string name="svar_4">Svar 4</string>
+    <string name="svar_3">Svar 3</string>
     <string-array name="quiz_category">
         <item>All</item>
         <item>Asia</item>

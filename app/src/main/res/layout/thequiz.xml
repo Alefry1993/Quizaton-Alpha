@@ -14,10 +14,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:gravity="center"
-        android:text="Spørsmål"
+        android:text="@string/sp_rsm_l"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="25sp"></TextView>
+        android:textSize="25sp"/>
 
     <TextView
         android:id="@+id/sporsmalsrunde"
@@ -26,11 +26,11 @@
         android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
         android:gravity="center"
-        android:text="Antall spørsmål"
+        android:text="@string/antall_sp_rsm_l"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20sp"></TextView>
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/svar1"
@@ -39,9 +39,9 @@
         android:layout_margin="10dp"
         android:background="@color/purple_200"
         android:padding="4dp"
-        android:text="Svar 1"
+        android:text="@string/svar_1"
         android:textAllCaps="false"
-        android:textColor="@color/black"></Button>
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/svar2"
@@ -50,9 +50,9 @@
         android:layout_margin="10dp"
         android:background="@color/purple_200"
         android:padding="4dp"
-        android:text="Svar 2"
+        android:text="@string/svar_2"
         android:textAllCaps="false"
-        android:textColor="@color/black"></Button>
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/svar3"
@@ -61,9 +61,9 @@
         android:layout_margin="10dp"
         android:background="@color/purple_200"
         android:padding="10dp"
-        android:text="Svar 3"
+        android:text="@string/svar_3"
         android:textAllCaps="false"
-        android:textColor="@color/black"></Button>
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/svar4"
@@ -72,23 +72,23 @@
         android:layout_margin="10dp"
         android:background="@color/purple_200"
         android:padding="4dp"
-        android:text="Svar 4"
+        android:text="@string/svar_4"
         android:textAllCaps="false"
-        android:textColor="@color/black"></Button>
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/tilbake"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="100dp"
+        android:layout_marginRight="10dp"
 
         android:background="@color/purple_200"
         android:padding="4dp"
-        android:text="@string/tilbake_til_hovedmenyen"
+        android:text="@string/avslutt_quiz"
         android:textAllCaps="false"
-        android:textColor="@color/black">/>
+        android:textColor="@color/black"/>
 
 
 </LinearLayout>
