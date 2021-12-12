@@ -101,6 +101,7 @@ public class kategoriActivity extends AppCompatActivity {
         });
 
 
+
         sportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -158,4 +159,9 @@ public class kategoriActivity extends AppCompatActivity {
         });
 
     }
+
+    /*public void startQuiz(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.putExtra("QUIZ_CATEGORY", quizCategory);
+    }*/
 }
