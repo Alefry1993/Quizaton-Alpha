@@ -51,18 +51,18 @@ public class geoquiz extends AppCompatActivity {
             {"Hva er hovedstaden i Kina?", "Beijing", "Chengdu", "Chongqing", "Wuhan"},
             {"Hva er hovedstaden i Sør-korea?", "Seoul", "Busan", "Daejeon", "Daegu"},
             {"Hva er hovedstaden i Pakistan?", "Islamabad", "Faisalabad", "Lahore", "Multan"},
-            {"Hva er hovedstaden i India?", "Mexico City", "Monterrey", "Matamoros", "Guadalajara"},
-            {"Hva er hovedstaden i Surinam?", "Paramaribo", "Affobakka", "Kwamalasamutu", "Peleloetepu"},
+            {"Hva er hovedstaden i India?", "New Delhi", "Jaipur", "Indore", "Ahmedabad"},
+            {"Hva er hovedstaden i Bangladesh?", "Dhaka", "Bogra", "Mymensingh", "Chittagong"},
 
-            //Oseania
+            //Afrika
             {"Hva er hovedstaden i Guyana?", "Georgetown", "Toka", "Corriverton", "Noitgedacht"},
             {"Hva er hovedstaden i Canada?", "Ottawa", "Vancouver", "Calgary", "Winnipeg"},
             {"Hva er hovedstaden i Argentina?", "Buenos Aires", "San Rafael", "Bahia Blanca", "Mendoza"},
             {"Hva er hovedstaden i Mexico?", "Mexico City", "Monterrey", "Matamoros", "Guadalajara"},
             {"Hva er hovedstaden i Surinam?", "Paramaribo", "Affobakka", "Kwamalasamutu", "Peleloetepu"}
 
-            //Afrika
-            {"Hva er hovedstaden i Guyana?", "Georgetown", "Toka", "Corriverton", "Noitgedacht"},
+            //Oseania
+            {"Hva er hovedstaden i Australia?", "Georgetown", "Toka", "Corriverton", "Noitgedacht"},
             {"Hva er hovedstaden i Canada?", "Ottawa", "Vancouver", "Calgary", "Winnipeg"},
             {"Hva er hovedstaden i Argentina?", "Buenos Aires", "San Rafael", "Bahia Blanca", "Mendoza"},
             {"Hva er hovedstaden i Mexico?", "Mexico City", "Monterrey", "Matamoros", "Guadalajara"},
