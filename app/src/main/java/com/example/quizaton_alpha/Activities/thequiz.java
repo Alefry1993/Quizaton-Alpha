@@ -26,11 +26,12 @@ public class thequiz extends AppCompatActivity {
 
 
     private TextView sporsmalsrunde, sporsmal;
-    private Button svar1, svar2, svar3, svar4;
+    private Button svar1, svar2, svar3, svar4, tilbake;
     private String riktigSvar;
     private int riktigSvarAntall = 0;
     private int quizAntall = 1;
     static final private int QUIZ_Antall = 5;
+
 
     ArrayList<ArrayList<String>> quizArray = new ArrayList<>();
 
@@ -54,6 +55,7 @@ public class thequiz extends AppCompatActivity {
         svar2 = findViewById(R.id.svar2);
         svar3 = findViewById(R.id.svar3);
         svar4 = findViewById(R.id.svar4);
+        tilbake = findViewById(R.id.tilbake);
 
         int quizKategori = getIntent().getIntExtra("QUIZ_KATEGORI", 0);
         Log.v("KATEGORI", quizKategori + "");
@@ -78,7 +80,7 @@ public class thequiz extends AppCompatActivity {
 
 
     public void showNextQuiz() {
-        sporsmalsrunde.setText("Q" + sporsmal);
+        sporsmalsrunde.setText("S" + sporsmal);
 
 
         Random random = new Random();
@@ -136,7 +138,13 @@ public class thequiz extends AppCompatActivity {
         builder.setCancelable(false);
         builder.show();
 
-
+tilbake.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent tilbakeIntent = new Intent(getApplicationContext(),forsideActivity.class);
+        startActivity(tilbakeIntent);
+    }
+});
 
 
 

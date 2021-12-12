@@ -16,4 +16,8 @@
         android:id="@+id/scoreboardFragment"
         android:name="com.example.quizaton_alpha.Fragments.scoreboardFragment"
         android:label="scoreboardFragment" />
+    <fragment
+        android:id="@+id/logOutFragment"
+        android:name="com.example.quizaton_alpha.Fragments.logOutFragment"
+        android:label="logOutFragment" />
 </navigation>

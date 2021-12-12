@@ -49,6 +49,8 @@
     <string name="title_notifications">Notifications</string>
     <string name="logg_ut">Logg ut</string>
     <string name="min_profil">Min Profil</string>
+    <string name="hjem">Hjem</string>
+    <string name="string_hjem" />
     <string-array name="quiz_category">
         <item>All</item>
         <item>Asia</item>
