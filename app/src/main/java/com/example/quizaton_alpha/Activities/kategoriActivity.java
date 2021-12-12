@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -83,8 +84,13 @@ public class kategoriActivity extends AppCompatActivity {
         geoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startintent = new Intent(getApplicationContext(), com.example.quizaton_alpha.quizkategorier.geoquiz.class);
-                startActivity(startintent);
+                Spinner spinner = findViewById(R.id.geoSpinner);
+                int quizKategori = spinner.getSelectedItemPosition();
+
+                // Start Quiz
+                Intent intent = new Intent(getApplicationContext(), com.example.quizaton_alpha.quizkategorier.geoquiz.class);
+                intent.putExtra("QUIZ_KATEGORI", quizKategori);
+                startActivity(intent);
             }
         });
 

@@ -45,7 +45,7 @@ public class geoquiz extends AppCompatActivity {
             {"Hva er hovedstaden i Canada?", "Ottawa", "Vancouver", "Calgary", "Winnipeg"},
             {"Hva er hovedstaden i Argentina?", "Buenos Aires", "San Rafael", "Bahia Blanca", "Mendoza"},
             {"Hva er hovedstaden i Mexico?", "Mexico City", "Monterrey", "Matamoros", "Guadalajara"},
-            {"Hva er hovedstaden i Surinam?", "Paramaribo", "Affobakka", "Kwamalasamutu", "Peleloetepu"},
+            {"Hva er hovedstaden i Surinam?", "Paramaribo", "Afobakka", "Kwamalasamutu", "Peleloetepu"},
 
             //Asia
             {"Hva er hovedstaden i Kina?", "Beijing", "Chengdu", "Chongqing", "Wuhan"},
@@ -55,18 +55,18 @@ public class geoquiz extends AppCompatActivity {
             {"Hva er hovedstaden i Bangladesh?", "Dhaka", "Bogra", "Mymensingh", "Chittagong"},
 
             //Afrika
-            {"Hva er hovedstaden i Guyana?", "Georgetown", "Toka", "Corriverton", "Noitgedacht"},
-            {"Hva er hovedstaden i Canada?", "Ottawa", "Vancouver", "Calgary", "Winnipeg"},
-            {"Hva er hovedstaden i Argentina?", "Buenos Aires", "San Rafael", "Bahia Blanca", "Mendoza"},
-            {"Hva er hovedstaden i Mexico?", "Mexico City", "Monterrey", "Matamoros", "Guadalajara"},
-            {"Hva er hovedstaden i Surinam?", "Paramaribo", "Affobakka", "Kwamalasamutu", "Peleloetepu"}
+            {"Hva er hovedstaden i Botswana?", "Georgetown", "Toka", "Corriverton", "Noitgedacht"},
+            {"Hva er hovedstaden i Egypt?", "Kairo", "Alexandria", "Luxor", "Sohag"},
+            {"Hva er hovedstaden i Sør-afrika?", "Cape Town", "Kimberly", "Port Elizabeth", "George"},
+            {"Hva er hovedstaden i Mali?", "Bamako", "Gao", "Segou", "Timbuktu"},
+            {"Hva er hovedstaden i Tsjad?", "N'Djamena", "Bahr El Ghazal", "Am Djemena", "Massakory"},
 
             //Oseania
-            {"Hva er hovedstaden i Australia?", "Georgetown", "Toka", "Corriverton", "Noitgedacht"},
-            {"Hva er hovedstaden i Canada?", "Ottawa", "Vancouver", "Calgary", "Winnipeg"},
-            {"Hva er hovedstaden i Argentina?", "Buenos Aires", "San Rafael", "Bahia Blanca", "Mendoza"},
-            {"Hva er hovedstaden i Mexico?", "Mexico City", "Monterrey", "Matamoros", "Guadalajara"},
-            {"Hva er hovedstaden i Surinam?", "Paramaribo", "Affobakka", "Kwamalasamutu", "Peleloetepu"}
+            {"Hva er hovedstaden i Australia?", "Canberra", "Adelaide", "Melbourne", "Geraldton"},
+            {"Hva er hovedstaden i New Zealand?", "Wellington", "Auckland", "Hamilton", "Hastings"},
+            {"Hva er hovedstaden i Filippinene?", "Manila", "Iloilo", "Zamboanga", "Davao"},
+            {"Hva er hovedstaden i Indonesia?", "Dili", "Kendari","Ambon", "Kupang"},
+            {"Hva er hovedstaden i Papua new guinea?", "Port Moresby", "Madang", "Wewak", "Awara"}
     };
 
 
