@@ -33,8 +33,8 @@ public class sportquiz extends AppCompatActivity {
 
 
     String quizData[][] = {
-            {"Hva er hovedstaden i Norge?", "Oslo", "Bergen", "Trondheim", "Fredrikstad"},
-            {"Hva er hovedstaden i Sverige", "Stockholm", "Gøteborg", "Malmø", "Uppsala"},
+            {"Hvor mange OL gull har Marit Bjørgen?", "8 Gull", "13 Gull", "3 Gull", "Ingen Gull"},
+            {"Hva heter hjemmebanen til Manchester United?", "Old Trafford", "Anfield", "Emirates Stadium", "Camp "},
             {"Hva er hovedstaden i Danmark", "København", "Århus", "Odense", "Ålborg"}
     };
 
