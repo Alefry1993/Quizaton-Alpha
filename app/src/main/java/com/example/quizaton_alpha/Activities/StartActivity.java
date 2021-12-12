@@ -1,4 +1,4 @@
-/*package com.example.quizaton_alpha.Activities;
+package com.example.quizaton_alpha.Activities;
 
 import android.content.Intent;
 import com.example.quizaton_alpha.R;
@@ -26,4 +26,4 @@ public class StartActivity extends AppCompatActivity {
         intent.putExtra("QUIZ_CATEGORY", quizCategory);
         startActivity(intent);
     }
-}*/
+}
