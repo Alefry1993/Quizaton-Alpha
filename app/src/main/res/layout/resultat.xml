@@ -11,25 +11,25 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RESULT"
+        android:text="RESULTAT"
         android:textSize="20sp"
         android:textColor="@color/white"
         android:layout_marginTop="50dp"/>
 
     <TextView
-        android:id="@+id/resultLabel"
+        android:id="@+id/resultatLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3 / 5"
+        android:text="5 / 5"
         android:textSize="30sp"
         android:textColor="@color/white"
         android:layout_marginTop="60dp"/>
 
     <TextView
-        android:id="@+id/totalScoreLabel"
+        android:id="@+id/sumScoreLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total Score : 333"
+        android:text="Sum poeng: 69"
         android:textSize="20sp"
         android:textColor="@color/white"
         android:layout_marginTop="60dp"/>
@@ -37,9 +37,9 @@
     <Button
         android:layout_width="140dp"
         android:layout_height="60dp"
-        android:text="Return"
+        android:text="Tilbake"
         android:textSize="18sp"
         android:textColor="@color/black"
         android:layout_marginTop="80dp"
-        android:onClick="returnTop"/>
+        android:onClick="tilbake"/>
 </LinearLayout>

@@ -37,7 +37,7 @@ public class resultatActivity extends AppCompatActivity {
 
     }
 
-    public void returnBack(View view) {
+    public void tilbake(View view) {
         startActivity(new Intent(getApplicationContext(), forsideActivity.class));
     }
 
