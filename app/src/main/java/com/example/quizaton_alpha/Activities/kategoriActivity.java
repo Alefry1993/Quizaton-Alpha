@@ -56,7 +56,7 @@ public class kategoriActivity extends AppCompatActivity {
         blandet1Button = findViewById(R.id.blandet1Button);
         blandet2Button = findViewById(R.id.blandet2Button);
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        //FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         //Bottom navigation
 
@@ -65,7 +65,7 @@ public class kategoriActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(bottomNavigation, navController);
 
 
-        geoButton.setOnClickListener(new View.OnClickListener() {
+        /*geoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent startintent = new Intent(getApplicationContext(),thequiz.class);
@@ -90,7 +90,7 @@ public class kategoriActivity extends AppCompatActivity {
 
 
             }
-        });
+        });*/
 
         sportButton.setOnClickListener(new View.OnClickListener() {
             @Override
