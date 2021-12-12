@@ -17,7 +17,7 @@ public class resultatActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.);
+        setContentView(R.layout.resultat);
 
         TextView resultatLabel = findViewById(R.id.resultatLabel);
         TextView sumScoreLabel = findViewById(R.id.sumScoreLabel);
@@ -40,5 +40,5 @@ public class resultatActivity extends AppCompatActivity {
     public void returnBack(View view) {
         startActivity(new Intent(getApplicationContext(), forsideActivity.class));
     }
-    
+
 }
