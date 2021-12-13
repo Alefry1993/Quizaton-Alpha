@@ -126,7 +126,7 @@ public class thequiz extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (quizAntall == QUIZ_Antall) {
-                    Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), resultatActivity.class);
                     intent.putExtra("RIKTIG_SVAR_ANTALL", riktigSvarAntall);
                     startActivity(intent);
                 }else {

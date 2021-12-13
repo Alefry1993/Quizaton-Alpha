@@ -42,12 +42,6 @@
             android:name=".Authentication.logInActivity"
             android:exported="true" />
         <activity
-            android:name=".Activities.MainActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Activities.StartActivity"
-            android:exported="true" />
-        <activity
             android:name=".quizkategorier.geoquiz"
             android:exported="true" />
         <activity

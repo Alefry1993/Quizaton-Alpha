@@ -15,5 +15,5 @@ public class scoreboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.scoreboard);
+        setContentView(R.layout.resultat);
 }}

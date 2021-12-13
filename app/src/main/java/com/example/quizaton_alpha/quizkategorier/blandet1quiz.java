@@ -11,7 +11,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.quizaton_alpha.Activities.ResultActivity;
 import com.example.quizaton_alpha.Activities.forsideActivity;
 import com.example.quizaton_alpha.R;
 
