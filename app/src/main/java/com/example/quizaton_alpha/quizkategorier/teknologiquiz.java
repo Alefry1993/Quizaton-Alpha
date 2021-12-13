@@ -45,7 +45,7 @@ public class teknologiquiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.thequiz);
 
-        sporsmalsrunde = findViewById(R.id.sporsmalsrunde);
+        sporsmalsrunde = findViewById(R.id.antallSporsmal);
         sporsmal = findViewById(R.id.sporsmal);
         svar1 = findViewById(R.id.svar1);
         svar2 = findViewById(R.id.svar2);

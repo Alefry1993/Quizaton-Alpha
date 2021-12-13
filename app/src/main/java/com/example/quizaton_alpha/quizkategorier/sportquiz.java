@@ -42,7 +42,7 @@ public class sportquiz extends AppCompatActivity {
             {"Hvilken sport hører Tour de France til?", "Sykling", "Roing", "Fotball", "Løping"},
             {"Hva kalles lagkapteinen på et curling-lag?", "Skip", "Vise-skip", "Lead", "Toer "},
             {"Hvilken sport er den eneste som har blitt spilt på månen?", "Golf", "Fotball", "Basketball", "Boksing"},
-            {"Hvor ble Asialekene først holdt?", "København", "Århus", "Odense", "Ålborg"}
+            {"Hvor ble Asialekene først holdt?", "New Dehli", "Bangkok", "Jakarta", "Hangzhou"}
     };
 
 
@@ -52,7 +52,7 @@ public class sportquiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.thequiz);
 
-        sporsmalsrunde = findViewById(R.id.sporsmalsrunde);
+        sporsmalsrunde = findViewById(R.id.antallSporsmal);
         sporsmal = findViewById(R.id.sporsmal);
         svar1 = findViewById(R.id.svar1);
         svar2 = findViewById(R.id.svar2);
