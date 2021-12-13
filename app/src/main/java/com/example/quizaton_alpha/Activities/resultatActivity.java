@@ -21,15 +21,27 @@ public class resultatActivity extends AppCompatActivity {
 
         TextView resultatLabel = findViewById(R.id.resultatLabel);
         TextView sumScoreLabel = findViewById(R.id.sumScoreLabel);
+        TextView kommentar = findViewById(R.id.kommentar);
 
         int score = getIntent().getIntExtra("RIKTIG_SVAR_ANTALL", 0);
 
         SharedPreferences sharedPreferences = getSharedPreferences("QUIZ_DATA", Context.MODE_PRIVATE);
         int totalScore = sharedPreferences.getInt("TOTAL_SCORE", 0);
-        totalScore += score;
+        totalScore = score;
 
         resultatLabel.setText(score + " / 5");
         sumScoreLabel.setText("Sum poeng: " + totalScore);
+
+        if(totalScore <= 2){
+            kommentar.setText("Bedre lykke til neste gang!");
+
+        }else if (totalScore == 3){
+            kommentar.setText("Godt forsøk. Godt på vei til å bli en verdig Quizmester!");
+
+        }else if (totalScore >= 4) {
+            kommentar.setText("Bra jobbet. Du er en verdig Quizmester!");
+
+        }
 
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt("TOTAL_SCORE", totalScore);

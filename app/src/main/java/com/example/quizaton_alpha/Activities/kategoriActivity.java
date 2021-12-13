@@ -13,19 +13,13 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.quizaton_alpha.R;
+import com.example.quizaton_alpha.quizkategorier.naturVitenskapquiz;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class kategoriActivity extends AppCompatActivity {
 
     private TextView kategoriView;
-    private Button geoButton;
-    private Button sportButton;
-    private Button vitenskapButton;
-    private Button filmtvButton;
-    private Button tekButton;
-    private Button historieButton;
-    private Button blandet1Button;
-    private Button blandet2Button;
+    private Button geoButton, sportButton, naturVitenskapButton, filmtvButton, tekButton, historieButton, blandet1Button, blandet2Button;
     private BottomNavigationView bottomNavigation;
     private NavController controller;
 
@@ -41,7 +35,7 @@ public class kategoriActivity extends AppCompatActivity {
         kategoriView = findViewById(R.id.kategoriView);
         geoButton = findViewById(R.id.geoButton);
         sportButton = findViewById(R.id.sportButton);
-        vitenskapButton = findViewById(R.id.vitenskapButton);
+        naturVitenskapButton = findViewById(R.id.naturVitenskapButton);
         filmtvButton = findViewById(R.id.filmtvButton);
         tekButton = findViewById(R.id.tekButton);
         historieButton = findViewById(R.id.historieButton);
@@ -52,34 +46,6 @@ public class kategoriActivity extends AppCompatActivity {
         bottomNavigation = findViewById(R.id.bottom_navigation);
         controller = Navigation.findNavController(this, R.id.fragmentis);
         NavigationUI.setupWithNavController(bottomNavigation, controller);
-
-
-        /*geoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startintent = new Intent(getApplicationContext(),thequiz.class);
-                startActivity(startintent);
-
-                DocumentReference docRef = db.collection("Kategori").document("Geografi");
-                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                Log.d(TAG, "DocumentSnapshot: " + document.getData());
-                            } else {
-                                Log.d(TAG, "No such document");
-                            }
-                        } else {
-                            Log.d(TAG, "get failed with ", task.getException());
-                        }
-                    }
-                });
-
-
-            }
-        });*/
 
         geoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,10 +70,10 @@ public class kategoriActivity extends AppCompatActivity {
             }
         });
 
-        vitenskapButton.setOnClickListener(new View.OnClickListener() {
+        naturVitenskapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startintent = new Intent(getApplicationContext(),com.example.quizaton_alpha.quizkategorier.vitenskapquiz.class);
+                Intent startintent = new Intent(getApplicationContext(), naturVitenskapquiz.class);
                 startActivity(startintent);
             }
         });

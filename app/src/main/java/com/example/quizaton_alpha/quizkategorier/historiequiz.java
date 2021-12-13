@@ -33,9 +33,16 @@ public class historiequiz extends AppCompatActivity {
 
 
     String quizData[][] = {
-            {"Hva er hovedstaden i Norge?", "Oslo", "Bergen", "Trondheim", "Fredrikstad"},
-            {"Sverige", "Stockholm", "Gøteborg", "Malmø", "Uppsala"},
-            {"Danmark", "København", "Århus", "Odense", "Ålborg"}
+            {"Når foregikk den Første verdenskrig (årstall start-slutt)?", "1914 til 1918", "1910 til 1914", "1918 til 1925", "1900 til 1910"},
+            {"Hvilken Nordmann ble tildelt Nobels fredspris i 1922?", "Fridtjof Nansen", "Roald Amundsen", "Thor Heierdal", "Bjørnstjerne Bjørnson"},
+            {"Hvilket århundre startet 'Hundreårskrigen'?", "1300-tallet", "1400-tallet", "1500-tallet", "1600-tallet"},
+            {"I hvilket år var Berlinmurens fall?", "1989", "1990", "1987", "1980"},
+            {"I hvilket år sank Titanic?", "1912", "1915", "1910", "1914"},
+            {"Hvilken by var det nordmennene kalte Jorsal på Sigurd Jorsalfares tid?", "Jerusalem", "Betlehem", "Sarajevo", "Jordan"},
+            {"Hvilken nobelspris mottok Winston Churchill i 1953?", "Litteratur", "Fysikk", "Kjemi", "Fred"},
+            {"Hvem var USAs aller første president?", "George Washington", "Abraham Lincoln", "Richard Nixon", "Barrack Obama"},
+            {"Hvilken by i USA ble særlig hardt rammet av orkanen Katrina i 2005?", "New Orleans", "Chicago", "Kentucky", "Florida"},
+            {"Hvor gammel var Napoleon da han døde?", "51", "60", "58", "53"}
     };
 
 
@@ -76,7 +83,7 @@ public class historiequiz extends AppCompatActivity {
 
 
     public void showNextQuiz() {
-        sporsmalsrunde.setText("S" + sporsmal);
+        sporsmalsrunde.setText("Spørsmål " + quizAntall);
 
 
         Random random = new Random();
@@ -93,9 +100,9 @@ public class historiequiz extends AppCompatActivity {
 
 
         svar1.setText(quiz.get(0));
-        svar1.setText(quiz.get(1));
-        svar1.setText(quiz.get(2));
-        svar1.setText(quiz.get(3));
+        svar2.setText(quiz.get(1));
+        svar3.setText(quiz.get(2));
+        svar4.setText(quiz.get(3));
 
         quizArray.remove(randomTall);
     }
@@ -122,7 +129,7 @@ public class historiequiz extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (quizAntall == QUIZ_Antall) {
-                    Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), com.example.quizaton_alpha.Activities.resultatActivity.class);
                     intent.putExtra("RIKTIG_SVAR_ANTALL", riktigSvarAntall);
                     startActivity(intent);
                 }else {

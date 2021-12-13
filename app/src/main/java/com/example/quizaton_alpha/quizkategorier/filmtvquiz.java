@@ -33,9 +33,16 @@ public class filmtvquiz extends AppCompatActivity {
 
 
     String quizData[][] = {
-            {"Hva er hovedstaden i Norge?", "Oslo", "Bergen", "Trondheim", "Fredrikstad"},
-            {"Sverige", "Stockholm", "Gøteborg", "Malmø", "Uppsala"},
-            {"Danmark", "København", "Århus", "Odense", "Ålborg"}
+            {"I hvilket land ligger hotellet hvor handlingen i Paradise Hotel foregår?", "Mexico", "Spania", "Portugal", "Gran Canaria"},
+            {"Hva heter Supermanns hjemplanet?", "Krypton", "Origon", "Helios", "Jorden"},
+            {"Hvilken avis jobber Peter Parker (aka Spider-Man) for?", "The Daily Bugle", "The Daily Planet", "The Daily Paper", "The Daily News"},
+            {"Hvilken barnelek med dødelig utgang for mange av spillerne, finner sted allerede i første episode av Squid Game?", "Rødt lys", "Gjemsel", "Sisten", "Haien kommer"},
+            {"Hvem spiller den grønne helten i filmen The Mask fra 1994?", "Jim Carrey", "Bruce Willis", "Tom Cruise", "Zac Efron"},
+            {"Hva heter Batman når han ikke har på seg masken?", "Bruce Wayne", "Bruce Banner", "Clark Kent", "Barry Allen"},
+            {"I hvilken stor-film fra 1997 ser vi at Jack og Rose forelsker seg?", "Titanic", "Armageddon", "Tomorrow Neved Dies", "Den Tapte Verden"},
+            {"I hvilken film møter vi Tony Montana?", "Scarface", "Gudfaren", "Die Hard", "Goodfellas"},
+            {"Hva heter Tom Cruise sin rollekarakter i Mission impossible filmserien?", "Ethan Hunt", "Ethan Hawk", "Brian Hunt", "Barry Hunt"},
+            {"Hvilken Tv-serie handler om karakterer som Jon Snow og Aria Stark?", "Games of thrones", "Vikings", "Peaky Blinders", "Black Sails"}
     };
 
 
@@ -76,7 +83,7 @@ public class filmtvquiz extends AppCompatActivity {
 
 
     public void showNextQuiz() {
-        sporsmalsrunde.setText("S" + sporsmal);
+        sporsmalsrunde.setText("Spørsmål " + quizAntall);
 
 
         Random random = new Random();
@@ -93,9 +100,9 @@ public class filmtvquiz extends AppCompatActivity {
 
 
         svar1.setText(quiz.get(0));
-        svar1.setText(quiz.get(1));
-        svar1.setText(quiz.get(2));
-        svar1.setText(quiz.get(3));
+        svar2.setText(quiz.get(1));
+        svar3.setText(quiz.get(2));
+        svar4.setText(quiz.get(3));
 
         quizArray.remove(randomTall);
     }
@@ -122,7 +129,7 @@ public class filmtvquiz extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (quizAntall == QUIZ_Antall) {
-                    Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), com.example.quizaton_alpha.Activities.resultatActivity.class);
                     intent.putExtra("RIKTIG_SVAR_ANTALL", riktigSvarAntall);
                     startActivity(intent);
                 }else {

@@ -87,7 +87,7 @@
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:id="@+id/vitenskapButton"
+                android:id="@+id/naturVitenskapButton"
                 android:layout_width="120dp"
                 android:textColor="@color/white"
                 android:layout_height="wrap_content"

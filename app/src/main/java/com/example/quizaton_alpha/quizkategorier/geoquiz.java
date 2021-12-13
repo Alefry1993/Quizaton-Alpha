@@ -2,6 +2,7 @@ package com.example.quizaton_alpha.quizkategorier;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,7 +21,7 @@ import java.util.Collections;
 import java.util.Random;
 
 public class geoquiz extends AppCompatActivity {
-    private TextView antallSporsmal, sporsmal;
+    private TextView sporsmalsrunde, sporsmal;
     private Button svar1, svar2, svar3, svar4, tilbake;
     private String riktigSvar;
     private int riktigSvarAntall = 0;
@@ -76,8 +77,8 @@ public class geoquiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.thequiz);
 
-        antallSporsmal = findViewById(R.id.sporsmal);
-        sporsmal = findViewById(R.id.antallSporsmal);
+        sporsmalsrunde = findViewById(R.id.antallSporsmal);
+        sporsmal = findViewById(R.id.sporsmal);
         svar1 = findViewById(R.id.svar1);
         svar2 = findViewById(R.id.svar2);
         svar3 = findViewById(R.id.svar3);
@@ -107,7 +108,7 @@ public class geoquiz extends AppCompatActivity {
 
 
     public void showNextQuiz() {
-        antallSporsmal.setText("S" + sporsmal);
+        sporsmalsrunde.setText("Spørsmål " + quizAntall);
 
 
         Random random = new Random();
@@ -124,9 +125,9 @@ public class geoquiz extends AppCompatActivity {
 
 
         svar1.setText(quiz.get(0));
-        svar1.setText(quiz.get(1));
-        svar1.setText(quiz.get(2));
-        svar1.setText(quiz.get(3));
+        svar2.setText(quiz.get(1));
+        svar3.setText(quiz.get(2));
+        svar4.setText(quiz.get(3));
 
         quizArray.remove(randomTall);
     }
@@ -141,9 +142,11 @@ public class geoquiz extends AppCompatActivity {
 
         if (buttonText.equals(riktigSvar)) {
             beskjedTittel = "Riktig!";
+
             riktigSvarAntall++;
         }else {
-            beskjedTittel = "Feil";
+            beskjedTittel = "Feil!";
+            svarButton.setBackgroundColor(Color.RED);
         }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -153,7 +156,7 @@ public class geoquiz extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (quizAntall == QUIZ_ANTALL) {
-                    Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), com.example.quizaton_alpha.Activities.resultatActivity.class);
                     intent.putExtra("RIKTIG_SVAR_ANTALL", riktigSvarAntall);
                     startActivity(intent);
                 }else {
@@ -172,4 +175,6 @@ public class geoquiz extends AppCompatActivity {
                 startActivity(tilbakeIntent);
             }
         });
+
+
 }}

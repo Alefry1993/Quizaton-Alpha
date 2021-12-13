@@ -33,9 +33,16 @@ public class teknologiquiz extends AppCompatActivity {
 
 
     String quizData[][] = {
-            {"Hva er hovedstaden i Norge?", "Oslo", "Bergen", "Trondheim", "Fredrikstad"},
-            {"Sverige", "Stockholm", "Gøteborg", "Malmø", "Uppsala"},
-            {"Danmark", "København", "Århus", "Odense", "Ålborg"}
+            {"En av verdens mest populære mobilapplikasjoner er utviklet av kinesiske ByteDance. Hva heter denne appen?", "Tik Tok", "Instagram", "Snapchat", "Twitter"},
+            {"Hva står forkortelsen DOS for?", "Disk Operating System", "Data Operating System", "Domain Operating System", "Digital Operating System"},
+            {"Hva heter tekstbehandlingsprogrammet i Apples iWork-pakke?", "Pages", "Notes", "Text", "Paper"},
+            {"Bilderedigeringsprogrammet til Adobe er holdt for å være det beste på markedet. Hva heter dette programmet?", "Adobe Photoshop", "Adobe Premier Pro", "Adobe Dreamweaver", "Adobe Flash"},
+            {"Hvilket operativsystem etterfulgte Windows 95?", "Windows 98", "Windows 2000", "Windows Vista", "Windows XP"},
+            {"Hvilket kjent programmeringsspråk er utviklet av danske Bjarne Stroustrup?", "C++", "Java", "Javascript", "Phyton"},
+            {"Hva er spillkonsollnavnet NES en forkortelse for?", "Nintendo Entertainment System", "Nintendo Enterprise System", "Nintendo Entertainment Spillkonsoll", "National Electrical System"},
+            {"Hva heter operativsystemet som både iPhone og iPad kjører på?", "iOS", "Android", "Linux", "Windows"},
+            {"Hvem står bak frontend rammeverket React?", "Facebook", "IBM", "Microsoft", "Google"},
+            {"Hvilket dataspill ble det nylig funnet en alvorlig sårbarhet i?", "Fortnite", "League of legends", "Minecraft", "World of warcraft"}
     };
 
 
@@ -76,7 +83,7 @@ public class teknologiquiz extends AppCompatActivity {
 
 
     public void showNextQuiz() {
-        sporsmalsrunde.setText("S" + sporsmal);
+        sporsmalsrunde.setText("Spørsmål " + quizAntall);
 
 
         Random random = new Random();
@@ -93,9 +100,9 @@ public class teknologiquiz extends AppCompatActivity {
 
 
         svar1.setText(quiz.get(0));
-        svar1.setText(quiz.get(1));
-        svar1.setText(quiz.get(2));
-        svar1.setText(quiz.get(3));
+        svar2.setText(quiz.get(1));
+        svar3.setText(quiz.get(2));
+        svar4.setText(quiz.get(3));
 
         quizArray.remove(randomTall);
     }
@@ -122,7 +129,7 @@ public class teknologiquiz extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (quizAntall == QUIZ_Antall) {
-                    Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), com.example.quizaton_alpha.Activities.resultatActivity.class);
                     intent.putExtra("RIKTIG_SVAR_ANTALL", riktigSvarAntall);
                     startActivity(intent);
                 }else {

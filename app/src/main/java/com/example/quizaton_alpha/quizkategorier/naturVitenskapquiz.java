@@ -19,13 +19,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class vitenskapquiz extends AppCompatActivity {
+public class naturVitenskapquiz extends AppCompatActivity {
     private TextView sporsmalsrunde, sporsmal;
     private Button svar1, svar2, svar3, svar4, tilbake;
     private String riktigSvar;
     private int riktigSvarAntall = 0;
     private int quizAntall = 1;
-    static final private int QUIZ_Antall = 5;
+    static final private int QUIZ_ANTALL = 5;
 
 
 
@@ -33,9 +33,16 @@ public class vitenskapquiz extends AppCompatActivity {
 
 
     String quizData[][] = {
-            {"Hva er hovedstaden i Norge?", "Oslo", "Bergen", "Trondheim", "Fredrikstad"},
-            {"Sverige", "Stockholm", "Gøteborg", "Malmø", "Uppsala"},
-            {"Danmark", "København", "Århus", "Odense", "Ålborg"}
+            {"Hva het den italienske vitenskapsmannen som oppfant batteriet en gang på 1700-tallet?", "Alessandro Volta", "Luigi Galvani", "Andre Ampere", "Georg Simon Ohm"},
+            {"Hva heter det kinesiske bilmerket på tre bokstaver, som spesialiserer seg på elbiler?", "NIO", "VOT", "WAT", "NEO"},
+            {"I hvilket stjernebilde ligger Polarstjernen?", "Lille bjørn", "Karlsvogna", "Store Bjørn", "Orion"},
+            {"Hva heter den andre planeten fra Sola i vårt solsystem?", "Venus", "Merkur", "Jorda","Saturn"},
+            {"Hva heter det største landbaserte pattedyret på jorden?", "Afrikansk savannelefant", "Asiatisk Neshorn", "Blåhval", "Sibirsk Tiger"},
+            {"Hvilket pattedyr er det eneste som kan fly?", "Flaggermus", "Ørn", "Måke", "Pingvin"},
+            {"Hva slags stoff fylles i hjulene på fly i stedet for vanlig luft?", "Nitrogen", "Helium", "Hydrogen", "Karbodioksid"},
+            {"Hva heter den kinesiske millionbyen hvor en ny type coronavirus ble påvist i desember 2019?", "Wuhan", "Beijing", "Shanghai", "Hong Kong "},
+            {"Hvilken sport er den eneste som har blitt spilt på månen?", "Golf", "Fotball", "Basketball", "Boksing"},
+            {"Hva er hakket under orkan på Beaufortskalaen?", "Sterk storm", "Full storm", "Sterk kuling", "Ekstrem kuling"}
     };
 
 
@@ -76,7 +83,8 @@ public class vitenskapquiz extends AppCompatActivity {
 
 
     public void showNextQuiz() {
-        sporsmalsrunde.setText("S" + sporsmal);
+
+        sporsmalsrunde.setText("Spørsmål " + quizAntall);
 
 
         Random random = new Random();
@@ -93,9 +101,9 @@ public class vitenskapquiz extends AppCompatActivity {
 
 
         svar1.setText(quiz.get(0));
-        svar1.setText(quiz.get(1));
-        svar1.setText(quiz.get(2));
-        svar1.setText(quiz.get(3));
+        svar2.setText(quiz.get(1));
+        svar3.setText(quiz.get(2));
+        svar4.setText(quiz.get(3));
 
         quizArray.remove(randomTall);
     }
@@ -121,8 +129,8 @@ public class vitenskapquiz extends AppCompatActivity {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                if (quizAntall == QUIZ_Antall) {
-                    Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                if (quizAntall == QUIZ_ANTALL) {
+                    Intent intent = new Intent(getApplicationContext(), com.example.quizaton_alpha.Activities.resultatActivity.class);
                     intent.putExtra("RIKTIG_SVAR_ANTALL", riktigSvarAntall);
                     startActivity(intent);
                 }else {

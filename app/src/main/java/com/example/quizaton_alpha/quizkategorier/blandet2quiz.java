@@ -33,9 +33,17 @@ public class blandet2quiz extends AppCompatActivity {
 
 
     String quizData[][] = {
-            {"Hva er hovedstaden i Norge?", "Oslo", "Bergen", "Trondheim", "Fredrikstad"},
-            {"Sverige", "Stockholm", "Gøteborg", "Malmø", "Uppsala"},
-            {"Danmark", "København", "Århus", "Odense", "Ålborg"}
+            {"I hvilket land ligger hotellet hvor handlingen i Paradise Hotel foregår?", "Mexico", "Spania", "Portugal", "Gran Canaria"},
+            {"Hva heter Supermanns hjemplanet?", "Krypton", "Origon", "Helios", "Jorden"},
+            {"Hvilken avis jobber Peter Parker (aka Spider-Man) for?", "The Daily Bugle", "The Daily Planet", "The Daily Paper", "The Daily News"},
+            {"Hva heter den andre planeten fra Sola i vårt solsystem?", "Venus", "Merkur", "Jorda","Saturn"},
+            {"Hva heter det største landbaserte pattedyret på jorden?", "Afrikansk savannelefant", "Asiatisk Neshorn", "Blåhval", "Sibirsk Tiger"},
+            {"Hvilket pattedyr er det eneste som kan fly?", "Flaggermus", "Ørn", "Måke", "Pingvin"},
+            {"Hvilken sport er den eneste som har blitt spilt på månen?", "Golf", "Fotball", "Basketball", "Boksing"},
+            {"Når foregikk den Første verdenskrig (årstall start-slutt)?", "1914 til 1918", "1910 til 1914", "1918 til 1925", "1900 til 1910"},
+            {"Hvilken Nordmann ble tildelt Nobels fredspris i 1922?", "Fridtjof Nansen", "Roald Amundsen", "Thor Heierdal", "Bjørnstjerne Bjørnson"},
+            {"Hvilket århundre startet 'Hundreårskrigen'?", "1300-tallet", "1400-tallet", "1500-tallet", "1600-tallet"}
+
     };
 
 
@@ -76,7 +84,7 @@ public class blandet2quiz extends AppCompatActivity {
 
 
     public void showNextQuiz() {
-        sporsmalsrunde.setText("S" + sporsmal);
+        sporsmalsrunde.setText("Spørsmål " + quizAntall);
 
 
         Random random = new Random();
@@ -93,9 +101,9 @@ public class blandet2quiz extends AppCompatActivity {
 
 
         svar1.setText(quiz.get(0));
-        svar1.setText(quiz.get(1));
-        svar1.setText(quiz.get(2));
-        svar1.setText(quiz.get(3));
+        svar2.setText(quiz.get(1));
+        svar3.setText(quiz.get(2));
+        svar4.setText(quiz.get(3));
 
         quizArray.remove(randomTall);
     }
@@ -122,7 +130,7 @@ public class blandet2quiz extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (quizAntall == QUIZ_Antall) {
-                    Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), com.example.quizaton_alpha.Activities.resultatActivity.class);
                     intent.putExtra("RIKTIG_SVAR_ANTALL", riktigSvarAntall);
                     startActivity(intent);
                 }else {

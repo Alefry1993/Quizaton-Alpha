@@ -51,7 +51,28 @@
             android:name=".quizkategorier.geoquiz"
             android:exported="true" />
         <activity
-            android:name=".Activities.ResultActivity"
+            android:name=".quizkategorier.naturVitenskapquiz"
+            android:exported="true" />
+        <activity
+            android:name=".quizkategorier.sportquiz"
+            android:exported="true" />
+        <activity
+            android:name=".quizkategorier.blandet1quiz"
+            android:exported="true" />
+        <activity
+            android:name=".quizkategorier.blandet2quiz"
+            android:exported="true" />
+        <activity
+            android:name=".quizkategorier.historiequiz"
+            android:exported="true" />
+        <activity
+            android:name=".quizkategorier.filmtvquiz"
+            android:exported="true" />
+        <activity
+            android:name=".quizkategorier.teknologiquiz"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.resultatActivity"
             android:exported="true" />
         <activity
             android:name=".Authentication.velkommenActivity"

@@ -34,7 +34,7 @@ public class sportquiz extends AppCompatActivity {
 
     String quizData[][] = {
             {"Hvor mange OL gull har Marit Bjørgen?", "8 Gull", "13 Gull", "3 Gull", "Ingen Gull"},
-            {"Hva heter hjemmebanen til Manchester United?", "Old Trafford", "Anfield", "Emirates Stadium", "Camp "},
+            {"Hva heter hjemmebanen til Manchester United?", "Old Trafford", "Anfield", "Emirates Stadium", "Camp Nou"},
             {" Hvilken idrettsutøver var den første til å vinne fem Wimbledon titler på rad?", "Bjørn Borg", "Pete Sampras", "Roger Federer", "Rafael Nadal"},
             {"Hvem oppfant basketball?", "James Naismith", "Kevin Durant", "LeBron James", "Frank Mahan"},
             {"Hvilken formel 1 løper har vunnet flest formel 1 løp i historien (2021)?", "Lewis Hamilton", "Michael Schumacher", "Sebastian Vettel", "Fernando Alonso"},
@@ -83,7 +83,7 @@ public class sportquiz extends AppCompatActivity {
 
 
     public void showNextQuiz() {
-        sporsmalsrunde.setText("S" + sporsmal);
+        sporsmalsrunde.setText("Spørsmål " + quizAntall);
 
 
         Random random = new Random();
@@ -100,9 +100,9 @@ public class sportquiz extends AppCompatActivity {
 
 
         svar1.setText(quiz.get(0));
-        svar1.setText(quiz.get(1));
-        svar1.setText(quiz.get(2));
-        svar1.setText(quiz.get(3));
+        svar2.setText(quiz.get(1));
+        svar3.setText(quiz.get(2));
+        svar4.setText(quiz.get(3));
 
         quizArray.remove(randomTall);
     }
@@ -129,7 +129,7 @@ public class sportquiz extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (quizAntall == QUIZ_Antall) {
-                    Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), com.example.quizaton_alpha.Activities.resultatActivity.class);
                     intent.putExtra("RIKTIG_SVAR_ANTALL", riktigSvarAntall);
                     startActivity(intent);
                 }else {
