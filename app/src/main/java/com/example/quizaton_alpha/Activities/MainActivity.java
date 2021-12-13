@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.thequiz);
 
         countLabel = findViewById(R.id.sporsmal);
-        questionLabel = findViewById(R.id.sporsmalsrunde);
+        questionLabel = findViewById(R.id.antallSporsmal);
         answerBtn1 = findViewById(R.id.svar1);
         answerBtn2 = findViewById(R.id.svar2);
         answerBtn3 = findViewById(R.id.svar3);

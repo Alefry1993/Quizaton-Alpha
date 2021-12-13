@@ -20,12 +20,12 @@ import java.util.Collections;
 import java.util.Random;
 
 public class geoquiz extends AppCompatActivity {
-    private TextView sporsmalsrunde, sporsmal;
+    private TextView antallSporsmal, sporsmal;
     private Button svar1, svar2, svar3, svar4, tilbake;
     private String riktigSvar;
     private int riktigSvarAntall = 0;
     private int quizAntall = 1;
-    static final private int QUIZ_Antall = 5;
+    static final private int QUIZ_ANTALL = 5;
 
 
 
@@ -76,8 +76,8 @@ public class geoquiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.thequiz);
 
-        sporsmalsrunde = findViewById(R.id.sporsmalsrunde);
-        sporsmal = findViewById(R.id.sporsmal);
+        antallSporsmal = findViewById(R.id.sporsmal);
+        sporsmal = findViewById(R.id.antallSporsmal);
         svar1 = findViewById(R.id.svar1);
         svar2 = findViewById(R.id.svar2);
         svar3 = findViewById(R.id.svar3);
@@ -107,7 +107,7 @@ public class geoquiz extends AppCompatActivity {
 
 
     public void showNextQuiz() {
-        sporsmalsrunde.setText("S" + sporsmal);
+        antallSporsmal.setText("S" + sporsmal);
 
 
         Random random = new Random();
@@ -152,7 +152,7 @@ public class geoquiz extends AppCompatActivity {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                if (quizAntall == QUIZ_Antall) {
+                if (quizAntall == QUIZ_ANTALL) {
                     Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
                     intent.putExtra("RIKTIG_SVAR_ANTALL", riktigSvarAntall);
                     startActivity(intent);
