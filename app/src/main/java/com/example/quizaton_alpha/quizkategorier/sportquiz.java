@@ -35,7 +35,14 @@ public class sportquiz extends AppCompatActivity {
     String quizData[][] = {
             {"Hvor mange OL gull har Marit Bjørgen?", "8 Gull", "13 Gull", "3 Gull", "Ingen Gull"},
             {"Hva heter hjemmebanen til Manchester United?", "Old Trafford", "Anfield", "Emirates Stadium", "Camp "},
-            {"Hva er hovedstaden i Danmark", "København", "Århus", "Odense", "Ålborg"}
+            {" Hvilken idrettsutøver var den første til å vinne fem Wimbledon titler på rad?", "Bjørn Borg", "Pete Sampras", "Roger Federer", "Rafael Nadal"},
+            {"Hvem oppfant basketball?", "James Naismith", "Kevin Durant", "LeBron James", "Frank Mahan"},
+            {"Hvilken formel 1 løper har vunnet flest formel 1 løp i historien (2021)?", "Lewis Hamilton", "Michael Schumacher", "Sebastian Vettel", "Fernando Alonso"},
+            {"Hvilken sport har et spillområde på 2.7×1.5m?", "Bordtennis", "Tennis", "Squash", "Innebandy"},
+            {"Hvilken sport hører Tour de France til?", "Sykling", "Roing", "Fotball", "Løping"},
+            {"Hva kalles lagkapteinen på et curling-lag?", "Skip", "Vise-skip", "Lead", "Toer "},
+            {"Hvilken sport er den eneste som har blitt spilt på månen?", "Golf", "Fotball", "Basketball", "Boksing"},
+            {"Hvor ble Asialekene først holdt?", "København", "Århus", "Odense", "Ålborg"}
     };
 
 
