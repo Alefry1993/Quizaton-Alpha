@@ -2,6 +2,7 @@ package com.example.quizaton_alpha.Authentication;
 
 import android.content.Intent;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.quizaton_alpha.Activities.forsideActivity;
 import com.example.quizaton_alpha.R;
 
 public class velkommenActivity extends AppCompatActivity {
@@ -28,8 +30,13 @@ public class velkommenActivity extends AppCompatActivity {
         loggInn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
                 Intent loggIntent = new Intent(getApplicationContext(),logInActivity.class);
                 startActivity(loggIntent);
+
+
             }
         });
 

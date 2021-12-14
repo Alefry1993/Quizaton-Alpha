@@ -49,8 +49,8 @@
         android:layout_width="140dp"
         android:layout_height="60dp"
         android:layout_marginTop="80dp"
-        android:onClick="tilbake"
         android:text="Tilbake"
+        android:onClick="tilbake"
         android:textColor="@color/black"
         android:textSize="18sp" />
 </LinearLayout>

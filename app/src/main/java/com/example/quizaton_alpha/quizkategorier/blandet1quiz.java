@@ -2,6 +2,7 @@ package com.example.quizaton_alpha.quizkategorier;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -59,6 +60,7 @@ public class blandet1quiz extends AppCompatActivity {
         svar3 = findViewById(R.id.svar3);
         svar4 = findViewById(R.id.svar4);
         tilbake = findViewById(R.id.tilbake);
+
 
         int quizKategori = getIntent().getIntExtra("QUIZ_KATEGORI", 0);
         Log.v("KATEGORI", quizKategori + "");

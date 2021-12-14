@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,15 +14,19 @@ import com.example.quizaton_alpha.R;
 
 public class resultatActivity extends AppCompatActivity {
 
+    private TextView resultatLabel, sumScoreLabel, kommentar;
+    private Button tilbakeQuiz;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resultat);
 
-        TextView resultatLabel = findViewById(R.id.resultatLabel);
-        TextView sumScoreLabel = findViewById(R.id.sumScoreLabel);
-        TextView kommentar = findViewById(R.id.kommentar);
+        resultatLabel = findViewById(R.id.resultatLabel);
+        sumScoreLabel = findViewById(R.id.sumScoreLabel);
+        kommentar = findViewById(R.id.kommentar);
+        tilbakeQuiz = findViewById(R.id.tilbakeQuiz);
 
         int score = getIntent().getIntExtra("RIKTIG_SVAR_ANTALL", 0);
 
@@ -49,8 +54,12 @@ public class resultatActivity extends AppCompatActivity {
 
     }
 
-    public void tilbake(View view) {
-        startActivity(new Intent(getApplicationContext(), forsideActivity.class));
+    public void tilbake (View view){
+        Intent tilbakeIntent = new Intent(getApplicationContext(),forsideActivity.class);
+        startActivity(tilbakeIntent);
+
+
     }
+
 
 }

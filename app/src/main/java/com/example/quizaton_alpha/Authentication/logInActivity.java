@@ -1,6 +1,7 @@
 package com.example.quizaton_alpha.Authentication;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -68,6 +69,8 @@ public class logInActivity extends AppCompatActivity {
                 String signEmail = email.getText().toString().trim();
                 String passord = pass.getText().toString().trim();
 
+                MediaPlayer music = MediaPlayer.create(logInActivity.this, R.raw.ring);
+
                 if (TextUtils.isEmpty(signEmail)) {
                     email.setError("Email er påkrevd");
                     email.requestFocus();
@@ -96,11 +99,16 @@ public class logInActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) { ;
                                     Toast.makeText( logInActivity.this,"Du er logget inn. Velkommen tilbake Quizmaster!", Toast.LENGTH_SHORT).show();
 
+
+                                    music.start();
+
                                     Intent signIntent = new Intent(getApplicationContext(), forsideActivity.class);
                                     startActivity(signIntent);
                                 }else{
                                     Toast.makeText(logInActivity.this, "Logg inn feilet: " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                                     signProg.setVisibility(View.GONE);
+
+                                    music.stop();
 
 
                                 }

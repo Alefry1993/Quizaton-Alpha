@@ -18,9 +18,6 @@
             android:name=".Activities.popupActivity"
             android:exported="true" />
         <activity
-            android:name=".Activities.scoreboardActivity"
-            android:exported="true" />
-        <activity
             android:name=".Activities.lagActivity"
             android:exported="true" />
         <activity

@@ -1,6 +1,7 @@
 package com.example.quizaton_alpha.Authentication;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -76,6 +77,8 @@ public class registrereActivity extends AppCompatActivity {
                 String email = regEmail.getText().toString().trim();
                 String telefon = regTlf.getText().toString().trim();
 
+                MediaPlayer music = MediaPlayer.create(registrereActivity.this, R.raw.ring);
+
                 if (TextUtils.isEmpty(navn)) {
                     regName.setError("Navn er påkrevd");
                     regName.requestFocus();
@@ -129,12 +132,16 @@ public class registrereActivity extends AppCompatActivity {
                                                 mDatabase.child("Brukere").child("Telefon").setValue(telefon);
 
 
+                                                music.start();
+
                                                 Intent regIntent = new Intent(getApplicationContext(), forsideActivity.class);
                                                 startActivity(regIntent);
 
                                             }else {
                                                 Toast.makeText(registrereActivity.this, "Registrering feilet: " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                                                 regProg.setVisibility(View.GONE);
+
+                                                music.stop();
                                             }
 
                                         }

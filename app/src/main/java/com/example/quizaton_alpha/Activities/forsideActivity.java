@@ -6,10 +6,12 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.quizaton_alpha.Authentication.logInActivity;
 import com.example.quizaton_alpha.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -31,6 +33,8 @@ public class forsideActivity extends AppCompatActivity {
         egneButton = (Button) findViewById(R.id.egneButton);
         scoreboardButton = (Button) findViewById(R.id.scoreboardButton);
         logOutButton = (Button) findViewById(R.id.logOutButton);
+
+        MediaPlayer ring= MediaPlayer.create(forsideActivity.this,R.raw.ring);
 
 
 
@@ -54,7 +58,7 @@ public class forsideActivity extends AppCompatActivity {
         scoreboardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent scoreboardIntent = new Intent(getApplicationContext(),scoreboardActivity.class);
+                Intent scoreboardIntent = new Intent(getApplicationContext(),resultatActivity.class);
                 startActivity(scoreboardIntent);
             }
         });
@@ -62,6 +66,9 @@ public class forsideActivity extends AppCompatActivity {
         logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                ring.stop();
+
                 Intent logOutIntent = new Intent(getApplicationContext(),com.example.quizaton_alpha.Authentication.velkommenActivity.class);
                 startActivity(logOutIntent);
             }
