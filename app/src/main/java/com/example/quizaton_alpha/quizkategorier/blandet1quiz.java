@@ -25,7 +25,7 @@ public class blandet1quiz extends AppCompatActivity {
     private String riktigSvar;
     private int riktigSvarAntall = 0;
     private int quizAntall = 1;
-    static final private int QUIZ_Antall = 5;
+    static final private int QUIZ_Antall = 10;
 
 
 
@@ -33,17 +33,36 @@ public class blandet1quiz extends AppCompatActivity {
 
 
     String quizData[][] = {
-            {"Hva er hovedstaden i Norge?", "Oslo", "Bergen", "Trondheim", "Fredrikstad"},
-            {"Hva er hovedstaden i India?", "New Delhi", "Jaipur", "Indore", "Ahmedabad"},
-            {"Hva er hovedstaden i Botswana?", "Georgetown", "Toka", "Corriverton", "Noitgedacht"},
+            {"I hvilket land ligger hotellet hvor handlingen i Paradise Hotel foregår?", "Mexico", "Spania", "Portugal", "Gran Canaria"},
+            {"Hva er hovedstaden i Spania?", "Madrid", "Zaragoza", "Bilbao", "Salamanca"},
+            {"Når foregikk den Første verdenskrig (årstall start-slutt)?", "1914 til 1918", "1910 til 1914", "1918 til 1925", "1900 til 1910"},
             {"Hva er hovedstaden i Moldova?", "Chișinău", "Tiraspol", "Balti", "Riscani"},
-            {"Hvem oppfant basketball?", "James Naismith", "Kevin Durant", "LeBron James", "Frank Mahan"},
-            {"Hvilken formel 1 løper har vunnet flest formel 1 løp i historien (2021)?", "Lewis Hamilton", "Michael Schumacher", "Sebastian Vettel", "Fernando Alonso"},
-            {"Hvilken sport har et spillområde på 2.7×1.5m?", "Bordtennis", "Tennis", "Squash", "Innebandy"},
-            {"Hvilket operativsystem etterfulgte Windows 95?", "Windows 98", "Windows 2000", "Windows Vista", "Windows XP"},
-            {"Hvilket kjent programmeringsspråk er utviklet av danske Bjarne Stroustrup?", "C++", "Java", "Javascript", "Phyton"},
-            {"Hvem står bak frontend rammeverket React?", "Facebook", "IBM", "Microsoft", "Google"}
-
+            {"Hvilken Nordmann ble tildelt Nobels fredspris i 1922?", "Fridtjof Nansen", "Roald Amundsen", "Thor Heierdal", "Bjørnstjerne Bjørnson"},
+            {"Hva heter Supermanns hjemplanet?", "Krypton", "Origon", "Helios", "Jorden"},
+            {"Hva er hovedstaden i Sverige?", "Stockholm", "Göteborg", "Malmö", "Uppsala"},
+            {"Hvilket århundre startet 'Hundreårskrigen'?", "1300-tallet", "1400-tallet", "1500-tallet", "1600-tallet"},
+            {"Hvilken avis jobber Peter Parker (aka Spider-Man) for?", "The Daily Bugle", "The Daily Planet", "The Daily Paper", "The Daily News"},
+            {"Hva er hovedstaden i Norge?", "Oslo", "Bergen", "Trondheim", "Fredrikstad"},
+            {"I hvilket år var Berlinmurens fall?", "1989", "1990", "1987", "1980"},
+            {"Hvilken barnelek med dødelig utgang for mange av spillerne, finner sted allerede i første episode av Squid Game?", "Rødt lys", "Gjemsel", "Sisten", "Haien kommer"},
+            {"Hva er hovedstaden i Surinam?", "Paramaribo", "Afobakka", "Kwamalasamutu", "Peleloetepu"},
+            {"I hvilket år sank Titanic?", "1912", "1915", "1910", "1914"},
+            {"Hvem spiller den grønne helten i filmen The Mask fra 1994?", "Jim Carrey", "Bruce Willis", "Tom Cruise", "Zac Efron"},
+            {"Hva er hovedstaden i Mexico?", "Mexico City", "Monterrey", "Matamoros", "Guadalajara"},
+            {"Hvilken by var det nordmennene kalte Jorsal på Sigurd Jorsalfares tid?", "Jerusalem", "Betlehem", "Sarajevo", "Jordan"},
+            {"Hva heter Batman når han ikke har på seg masken?", "Bruce Wayne", "Bruce Banner", "Clark Kent", "Barry Allen"},
+            {"Hva er hovedstaden i Argentina?", "Buenos Aires", "San Rafael", "Bahia Blanca", "Mendoza"},
+            {"Hvilken nobelspris mottok Winston Churchill i 1953?", "Litteratur", "Fysikk", "Kjemi", "Fred"},
+            {"I hvilken stor-film fra 1997 ser vi at Jack og Rose forelsker seg?", "Titanic", "Armageddon", "Tomorrow Neved Dies", "Den Tapte Verden"},
+            {"Hva er hovedstaden i Canada?", "Ottawa", "Vancouver", "Calgary", "Winnipeg"},
+            {"Hvem var USAs aller første president?", "George Washington", "Abraham Lincoln", "Richard Nixon", "Barrack Obama"},
+            {"I hvilken film møter vi Tony Montana?", "Scarface", "Gudfaren", "Die Hard", "Goodfellas"},
+            {"Hva er hovedstaden i Danmark?", "København", "Århus", "Odense", "Ålborg"},
+            {"Hvilken by i USA ble særlig hardt rammet av orkanen Katrina i 2005?", "New Orleans", "Chicago", "Kentucky", "Florida"},
+            {"Hva heter Tom Cruise sin rollekarakter i Mission impossible filmserien?", "Ethan Hunt", "Ethan Hawk", "Brian Hunt", "Barry Hunt"},
+            {"Hvor gammel var Napoleon da han døde?", "51", "60", "58", "53"},
+            {"Hvilken Tv-serie handler om karakterer som Jon Snow og Aria Stark?", "Games of thrones", "Vikings", "Peaky Blinders", "Black Sails"},
+            {"Hva er hovedstaden i Guyana?", "Georgetown", "Toka", "Corriverton", "Noitgedacht"}
     };
 
 

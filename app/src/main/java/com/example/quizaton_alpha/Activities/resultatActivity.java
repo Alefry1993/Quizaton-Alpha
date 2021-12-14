@@ -34,16 +34,16 @@ public class resultatActivity extends AppCompatActivity {
         int totalScore = sharedPreferences.getInt("TOTAL_SCORE", 0);
         totalScore = score;
 
-        resultatLabel.setText(score + " / 5");
+        resultatLabel.setText(score + " / 10");
         sumScoreLabel.setText("Sum poeng: " + totalScore);
 
-        if(totalScore <= 2){
+         if(totalScore <= 2){
             kommentar.setText("Bedre lykke til neste gang!");
 
-        }else if (totalScore == 3){
-            kommentar.setText("Godt forsøk. Godt på vei til å bli en verdig Quizmester!");
+        }else if (totalScore <= 7) {
+            kommentar.setText("Godt forsøk. På god vei til å bli en verdig Quizmester!");
 
-        }else if (totalScore >= 4) {
+        }else if (totalScore >= 8) {
             kommentar.setText("Bra jobbet. Du er en verdig Quizmester!");
 
         }

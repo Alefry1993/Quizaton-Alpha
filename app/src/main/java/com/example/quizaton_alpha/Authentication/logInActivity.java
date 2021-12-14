@@ -69,7 +69,8 @@ public class logInActivity extends AppCompatActivity {
                 String signEmail = email.getText().toString().trim();
                 String passord = pass.getText().toString().trim();
 
-                MediaPlayer music = MediaPlayer.create(logInActivity.this, R.raw.ring);
+                    MediaPlayer music = MediaPlayer.create(logInActivity.this, R.raw.ring);
+
 
                 if (TextUtils.isEmpty(signEmail)) {
                     email.setError("Email er påkrevd");

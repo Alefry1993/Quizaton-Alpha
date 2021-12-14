@@ -24,7 +24,7 @@ public class naturVitenskapquiz extends AppCompatActivity {
     private String riktigSvar;
     private int riktigSvarAntall = 0;
     private int quizAntall = 1;
-    static final private int QUIZ_ANTALL = 5;
+    static final private int QUIZ_ANTALL = 10;
 
 
 

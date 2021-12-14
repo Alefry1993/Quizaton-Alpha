@@ -50,12 +50,7 @@ public class kategoriActivity extends AppCompatActivity {
         geoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Spinner spinner = findViewById(R.id.geoSpinner);
-                int quizKategori = spinner.getSelectedItemPosition();
-
-                // Start Quiz
                 Intent intent = new Intent(getApplicationContext(), com.example.quizaton_alpha.quizkategorier.geoquiz.class);
-                intent.putExtra("QUIZ_KATEGORI", quizKategori);
                 startActivity(intent);
             }
         });
