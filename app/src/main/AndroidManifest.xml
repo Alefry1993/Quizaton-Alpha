@@ -15,9 +15,6 @@
             android:name=".Authentication.registrereActivity"
             android:exported="true" />
         <activity
-            android:name=".Activities.thequiz"
-            android:exported="true" />
-        <activity
             android:name=".Activities.popupActivity"
             android:exported="true" />
         <activity
