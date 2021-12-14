@@ -104,7 +104,7 @@ public class registrereActivity extends AppCompatActivity {
                     regPass.requestFocus();
                     return;
                 } else if (passord.length() < 6) {
-                    regPass.setError("Passord må være lengre enn 6 karakterer");
+                    regPass.setError("Passord må være 6 karakterer eller lenger");
                     regPass.requestFocus();
                     return;
                 }
